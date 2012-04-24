@@ -1,0 +1,2 @@
+{config_load file=templates.ini section="common" scope="global"}
+<a href="{#script_url#}{seo_url rm = $request.page_seo}" onclick="Lightbox.get_html('Popup_Page_ajax', {literal}{{/literal}page_seo:'{$request.page_seo}'{if $request.width}, page_width:'{$request.width}'{/if}{if $request.height}, page_height:'{$request.height}'{/if}{literal}}{/literal});return false;">{$request.link_text}</a>

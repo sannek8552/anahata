@@ -1,0 +1,100 @@
+{config_load file=templates.ini section="common"}
+<div id="checkoutTable">
+<table width="96%">
+<tr>
+	<td colspan="2" valign="top"><h2>Billing Address</h2></td>
+	<td colspan="2" align="left" valign="top"><h2>Shipping Address</h2>
+	  <input type="checkbox" name="same" value="" onclick="same_as_above(this,this.form);" />
+		Same as billing address</td>
+</tr>
+<tr>
+  <td>Name</td>
+  <td><input type="text" name="client_name" value="{$data.billing.name}" tabindex="7" title="string___input your name"/>
+    {if $error.client_name == 1}<small class="required_class">input your name</small>{/if}</td>
+	<td>Street address</td>
+    <td><input type="text" name="shipping_address" tabindex="50" value="{$data.shipping.address}" title="string___input&nbsp;address"/>
+      {if $error.shipping_address == 1}<small class="required_class">input address</small>{/if}</td>
+</tr>
+<tr>
+  <td>Street address</td>
+  <td><input type="text" name="address" value="{$data.billing.address}" tabindex="10" title="string___input address"/>
+    {if $error.address == 1}<small class="required_class">input address</small>{/if}</td>
+	<td>Address line 2</td>
+    <td><input type="text" name="shipping_address2" tabindex="55" value="{$data.shipping.address2}" />
+      {if $error.shipping_address2 == 1}<small class="required_class">input address</small>{/if}</td>
+</tr>
+<tr>
+  <td>Address line 2</td>
+  <td><input type="text" name="address2" value="{$data.billing.address2}" tabindex="15" />
+    {if $error.address2 == 1}<small class="required_class">input address</small>{/if}</td>
+    <td>Suburb</td>
+    <td><input type="text" name="shipping_suburb" value="{$data.shipping.suburb}" tabindex="60" title="string___input&nbsp;suburb"/>
+      {if $error.shipping_suburb == 1}<small class="required_class">input suburb</small>{/if}</td>
+</tr>
+<tr>
+ 	<td>Suburb</td>
+  <td><input type="text" name="suburb" value="{$data.billing.suburb}" tabindex="20" title="string___input suburb"/>
+    {if $error.suburb == 1}<small class="required_class">input suburb</small>{/if}</td>
+	<td>State</td>
+    <td><input type="text" name="shipping_state" value="{$data.shipping.state}" tabindex="65" title="string___input&nbsp;state"/>
+      {if $error.shipping_state == 1}<small class="required_class">input state</small>{/if}</td>
+</tr>
+<tr>
+  <td>State</td>
+  <td><input type="text" name="state" value="{$data.billing.state}" tabindex="25" title="string___input state"/>
+    {if $error.state == 1}<small class="required_class">input state</small>{/if}</td>
+	<td>Postcode</td>
+    <td><input type="text" name="shipping_postcode" value="{$data.shipping.postcode}" tabindex="70" title="string___input&nbsp;postcode"/>
+      {if $error.shipping_postcode == 1}<small class="required_class">input postcode</small>{/if}</td>
+</tr>
+<tr>
+  <td>Postcode</td>
+  <td><input type="text" name="postcode" value="{$data.billing.postcode}" tabindex="30" title="string___input postcode"/>
+    {if $error.postcode == 1}<small class="required_class">input postcode</small>{/if}</td>
+	<td>Phone</td>
+    <td><input type="text" name="shipping_phone" value="{$data.shipping.phone}" tabindex="75" title="string___input&nbsp;phone"/>
+      {if $error.shipping_phone == 1}<small class="required_class">input phone</small>{/if}</td>
+</tr>
+{*end of shipping*}
+<tr>
+  <td>Phone</td>
+  <td><input type="text" name="phone" value="{$data.billing.phone}" tabindex="35" title="string___input phone"/>
+    {if $error.phone == 1}<small class="required_class">input phone</small>{/if}</td>	
+  <td>Country</td>
+  <td>
+        <select name="shipping_country" style="width:121px;" tabindex="45" title="string___select country">
+                <option value="">Select Country</option>
+                {foreach from=$countries item=c}
+                <option value="{$c.country_id}" {if $c.country_id == $data.shipping.country_id}selected{/if}>{$c.name}</option>
+                {/foreach}
+        </select>
+        {if $country.email == 1}<small class="required_class">input country</small>{/if}
+  </td>
+</tr>
+<tr>
+  <td>Country</td>
+  <td>
+        <select name="billing_country" style="width:121px;" tabindex="45" title="string___select country">
+                <option value="">Select Country</option>
+                {foreach from=$countries item=c}
+                <option value="{$c.country_id}" {if $c.country_id == $data.billing.country_id}selected{/if}>{$c.name}</option>
+                {/foreach}
+        </select>
+        {if $country.email == 1}<small class="required_class">input country</small>{/if}
+  </td>
+
+	<td>&nbsp;</td>
+    <td>&nbsp;</td>
+</tr>
+
+{*
+<tr>
+  <td>Email</td>
+  <td><input type="text" name="billing_email" value="{$data.billing.email}" tabindex="40" title="email___input email" />
+    {if $error.email == 1}<small class="required_class">input email</small>{/if}</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+</tr>
+</table>
+</div>
+*}

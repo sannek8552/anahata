@@ -1,0 +1,19 @@
+--- C:/Documents and Settings/pcollier/desktop/calendar.js	Mon Mar 07 19:06:00 2005
++++ w:/common/calendar/calendar.js	Mon Mar 12 17:48:32 2007
+@@ -88,6 +88,7 @@
+ 		   !/opera/i.test(navigator.userAgent) );
+ 
+ Calendar.is_ie5 = ( Calendar.is_ie && /msie 5\.0/i.test(navigator.userAgent) );
++Calendar.is_ie7up = ( Calendar.is_ie && parseFloat(navigator.userAgent.replace(/.*msie ([0-9]+).*/i, "$1" )) >= 7 );
+ 
+ /// detect Opera browser
+ Calendar.is_opera = /opera/i.test(navigator.userAgent);
+@@ -1389,7 +1390,7 @@
+ 		document.body.appendChild(cp);
+ 		var br = Calendar.getAbsolutePos(cp);
+ 		document.body.removeChild(cp);
+-		if (Calendar.is_ie) {
++		if (Calendar.is_ie && !Calendar.is_ie7up) {
+ 			br.y += document.body.scrollTop;
+ 			br.x += document.body.scrollLeft;
+ 		} else {

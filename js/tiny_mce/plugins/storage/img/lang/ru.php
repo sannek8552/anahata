@@ -1,0 +1,56 @@
+<?php
+	$_LANG = array(
+	'L_ADMIN_PANEL' => 'Панель управления',
+	'L_LOGOUT' => 'Выход',
+	'L_CMS' => 'Контент',
+	'L_PAGES' => 'Страницы',
+	'L_PAGES_NEW' => 'Страницы Новые',
+	'L_ADMINISTRATION' => 'Администратор',
+	'L_PROFILE' => 'Профиль',
+	'L_USER_MANAGER' => 'Пользователи',
+	'L_MODULES' => 'Модули',
+	'L_CONTACT_MANAGER' => 'Форма контакта',
+	'L_FAQ_MANAGER' => 'Модуль FAQ',
+	'L_GOOGLE_MAP_MANAGER' => 'Google Map',
+	'L_FILE_MANAGER' => 'Хранилище файлов',
+	'L_GALLERY' => 'Галерея',
+	'L_GALLERY_SIMPLE' => 'Простая галерея',
+	'L_RSS' => 'RSS',
+	'L_TEXT_MANAGER' => 'Статический текст',
+	'L_NEWS_MANAGER' => 'Новости',
+	'L_EDIT' => 'Редактировать',
+	'L_ADD' => 'Добавить',
+	'L_SAVE' => 'Сохранить',
+	'L_INSERT_CODE' => 'Код для вставки',
+	'L_FUNCTIONS' => 'Функции',
+	'L_DELETE' => 'Удалить',
+	'L_ARE_YOU_SURE' => 'Вы уверены?',
+	'L_CANCEL' => 'Отмена',
+	
+	/*admin_rss.tpl*/
+	'L_RSS_MODULE' => 'Модуль RSS',
+	'L_RSS_URL' => 'URL фида',
+	'L_ITEMS_PER_PAGE' => 'Элементов на страницу',
+	'L_LOAD_BY_AJAX' => 'Использовать AJAX',
+	'L_SHOW_TITLE' => 'Показывать заголовок',
+	'L_SHOW_PUBLISH_DATE' => 'Показывать дату публикации',
+	'L_SHOW_DESCRIPTION' => 'Показывать описание',
+	'L_ITEMS_PER_PAGE_SHORT' => 'Элементов',
+	'L_AJAX_SHORT' => 'AJAX',
+	'L_SHOW_TITLE_SHORT' => 'Заголовок',
+	'L_SHOW_PUBLISH_DATE_SHORT' => 'Дата',
+	'L_SHOW_DESCRIPTION_SHORT' => 'Описание',
+		
+	/*contact_manager.tpl*/
+	'L_CONTACT_FORM' => 'Форму контакта',
+	'L_FROM_NAME' => 'Имя отправителя',
+	'L_FROM_EMAIL' => 'Email отправителя',
+	'L_SUBJECT' => 'Тема письма',
+	'L_EMAIL_TEXT' => 'Текст письма',
+	'L_THANK_YOU_SEO_URL' => 'Страница благодарности (введите seo url страницы)',
+	'L_THANK_YOU' => 'Страница благодарности',
+	'L_ENTRIES' => 'Письма',
+	'L_FORM_FIELDS' => 'Поля формы'
+	
+	);
+?>

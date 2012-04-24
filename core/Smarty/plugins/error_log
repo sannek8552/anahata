@@ -1,0 +1,5 @@
+[18-Dec-2007 20:39:43] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ')' in /home/thesaver/public_html/orders/core/Smarty/plugins/modifier.ocdate.php on line 2
+[18-Dec-2007 20:39:59] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ')' in /home/thesaver/public_html/orders/core/Smarty/plugins/modifier.ocdate.php on line 3
+[18-Dec-2007 20:40:09] PHP Parse error:  syntax error, unexpected '}' in /home/thesaver/public_html/orders/core/Smarty/plugins/modifier.ocdate.php on line 11
+[18-Dec-2007 20:40:24] PHP Parse error:  syntax error, unexpected '}' in /home/thesaver/public_html/orders/core/Smarty/plugins/modifier.ocdate.php on line 9
+[18-Dec-2007 20:40:32] PHP Parse error:  syntax error, unexpected '}' in /home/thesaver/public_html/orders/core/Smarty/plugins/modifier.ocdate.php on line 8

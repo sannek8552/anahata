@@ -1,0 +1,350 @@
+body {
+	margin: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-align: justify;
+	color:#666766;
+	background: url(images/bg.gif) repeat-x top;
+	line-height: 16px;
+}
+a, a:active {
+	text-decoration:none;
+}
+a:hover {
+	color:#ed1651;
+}
+p {
+	padding: 0 0 16px 0;
+	margin: 0;
+}
+p.arrow {
+	background:url(images/pArrow.gif) no-repeat left center;
+	text-indent: 15px;
+	line-height: 16px;
+	padding: 0;
+	font-weight: bold;
+}
+p.arrow a {
+	color:#ed1651;
+	text-transform:uppercase;
+}
+li {
+	list-style-position: outside;
+	text-align: left;
+	margin: 3px 0 8px -7px;
+	padding: 0;
+	list-style-image:url(images/pArrow.gif);
+}
+#header, #header2, #menu, #main, #content, #container, #copyright, #imageMenu {
+	width: 1004px;
+	margin: 0 auto;
+	
+}
+#container {
+	padding: 0 0 10px 0;
+}
+#header {
+	height: 169px;
+}
+#header img {
+	position:absolute;
+	top:67px;
+	margin-left:24px;
+}
+#main {
+
+}
+#content {
+	width:1004px;
+	padding:0;
+	margin-top: 50px;
+}
+#bodyContent {
+	padding: 5px;
+}
+#contentHome {
+	padding-left: 10px;
+}
+#footer {
+	font-size:11px;
+	height:20px;
+	color:#000;
+	text-align:center;
+	padding:20px 0 0 10px;
+	clear:both;
+	text-align:left;
+}
+#footer a {
+	color:#000;
+	text-decoration:none;
+	padding: 0 3px;
+}
+#footer a:hover {
+	text-decoration:underline;
+}
+/*#footer a, #footer a:visited {
+	color: #000;
+	margin: 0 10px;
+	text-decoration:none;
+	text-align:center;
+}*/
+
+#copyright {
+    padding:12px 30px 0 0;
+	color:#FFF;
+	width:220px;
+	float:right;
+	text-align:right;
+}
+/* ### Main Navigation ### 
+/*Credits: CSSplay */
+#main_menu {
+	width: 990px;
+	height: 18px;
+	line-height: 18px;
+	margin-left:4px;
+	position:absolute;
+	top: 155px;
+}
+#main_menu li {
+	margin: 0;
+}
+
+.preload2 {background: url(images/button4.gif);}
+.menu2 {padding:0 0 0 4px; margin:auto; list-style:none; height:15px; position:relative; text-transform:lowercase; z-index: 1400; }
+.menu2 li.top {display:block; float:left; position:relative;}
+.menu2 li a.top_link {display:block; float:left; height:18px; line-height:18px; color:#fff; text-decoration:none; font-size:13px; font-weight:bold; padding:0 12px; cursor:pointer;}
+.menu2 li a.top_link span {float:left; display:block; padding:0 12px; height:18px;}
+.menu2 li a.top_link span.down {float:left; display:block; padding:0 12px; height:18px;}
+.menu2 li a.top_link:hover {color:#000; background: #fff;}
+
+.menu2 li:hover > a.top_link {color:#000; background: #fff;}
+.menu2 li:hover > a.top_link span {background: #fff;}
+.menu2 li:hover > a.top_link span.down {background: #fff;}
+
+
+.menu2 table {border-collapse:collapse; width:0; height:0; position:absolute; top:0; left:0;}
+
+/* Default link styling */
+
+/* Style the list OR link hover. Depends on which browser is used */
+
+.menu2 a:hover {visibility:visible;}
+.menu2 li:hover {position:relative; z-index:1401;}
+
+/* keep the 'next' level invisible by placing it off screen. */
+.menu2 ul, 
+.menu2 :hover ul ul, 
+.menu2 :hover ul :hover ul ul,
+.menu2 :hover ul :hover ul :hover ul ul,
+.menu2 :hover ul :hover ul :hover ul :hover ul ul {position:absolute; left:-9999px; top:-9999px; width:0; height:0; margin:0; padding:0; list-style:none;}
+
+.menu2 :hover ul.sub {left:0; top:18px; background: #000; padding:0; border-bottom:1px solid #fff; white-space:nowrap; width:140px; height:auto; z-index: 1401;}
+.menu2 :hover ul.sub li {display:block; height:20px; position:relative; float:left; width:140px;}
+.menu2 :hover ul.sub li a {display:block; font-size:11px; height:20px; width:140px; line-height:20px; text-indent:5px; color:#FFFFFF; text-decoration:none; border-width:0 0 0 3px;font-size:13px; font-weight:bold;}
+.menu2 :hover ul.sub li a.fly {background:#000 url(images/arrow.gif) 167px 7px no-repeat;}
+.menu2 :hover ul.sub li a:hover {background:#fff; color:#000;}
+.menu2 :hover ul.sub li a.fly:hover {background:#fff url(images/arrow_over.gif) 167px 7px no-repeat; color:#000;}
+.menu2 :hover ul li:hover > a.fly {background:#000 url(images/arrow_over.gif) 167px 7px no-repeat; color:#fff;} 
+
+.menu2 :hover ul :hover ul,
+.menu2 :hover ul :hover ul :hover ul,
+.menu2 :hover ul :hover ul :hover ul :hover ul,
+.menu2 :hover ul :hover ul :hover ul :hover ul :hover ul
+{left:140px; top:0; background: #000; padding:3px 0; border:1px solid #000000; white-space:nowrap; width:200px; z-index:200; height:auto; z-index: 1401; color:#FFFFFF;}
+
+
+/* ### Sidebars ### */ 
+#qws {
+	text-decoration: none;
+	font-size: 11px;
+	text-align:right;
+	width: 450px;
+	color:#000;
+	float:right;
+}
+
+/*********** Content ************/
+h1, h2, h3, h4, h5, h1 a{
+	font-size: 36px;
+	font-weight: bold;
+	color:#000;
+	text-align: left;
+	margin: 0 0 10px 0;
+	text-decoration:none;
+	line-height:normal;
+}
+h3, h3 a:link, h3 a:visited {
+	color: #ef3c24;
+	color:#353535;
+}
+h3 a:hover, h3 a:active {
+	color:#000;
+}
+h2, h3 {
+	font-size: 15px;
+	margin-top: 10px;
+}
+h2.ProductNav {
+	font-size: 14px;
+}
+h3, h3 a:link, h3 a:visited, h6 {
+	font-size: 18px;
+	color: #fff;
+	display:block;
+	background:#a6a6a6;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 12px;
+}
+h3 a:hover {color:#000000;}
+h5 {border-bottom: 1px dashed #353535;}
+h6 {
+	font-size: 16px;
+	background:#ed1651;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 0 0 12px;
+	margin: 20px 0 0 0;
+	width:170px;
+}
+/* normal body links*/
+a {
+	font-weight: normal;
+	color:#000;
+	text-decoration: none;
+}
+a:link, a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #8a526e;
+}
+a:active {
+	text-decoration: none;
+}
+
+
+/* ######## FAQ Pages ##### */
+.toggler {
+	color: #fff;
+	margin: 0;
+	padding: 2px 5px;
+	background: #302e2d;
+	border:outset #2d2c2c 2px;
+	font-size: 12px;
+	font-weight: normal;
+}
+h3.toggler {
+	font-weight: bold;
+}
+.element {
+	margin: 5px 0 0 5px;
+}
+table {
+	margin-bottom: 15px;
+}
+img {
+	border: none;
+}
+input {
+	font-size: 11px;
+	width:auto;
+}
+#homeIntro {
+	background:url(images/homeIntro.jpg) no-repeat right;
+	width: 1004px;
+	height: 212px;
+}
+#homeIntro img {
+	float:left;
+}
+#intro {
+	float:left;
+	width:343px;
+	padding-right: 11px;
+	margin-left: 10px;
+}
+.introText {
+	height: 127px;
+	margin-top: 7px;
+}
+.introText h1 {
+	font-size: 20px;
+}
+.signUp {
+	color:#FFFFFF;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 10px;
+	margin-top: 7px;
+}
+.signUp a {
+	color:#FFFFFF;
+	text-decoration:underline;
+}
+.signUp span {
+	color: #ed1651;
+	margin-right: 90px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.whatsHot a {
+	display:block;
+	width: 25%;
+	height: 30px;
+	line-height: 30px;
+	float:left;
+	color:#353535;
+	text-align:center;
+}
+.whatsHot a:hover {
+	background: #ed1651;
+	display:block;
+	color:#FFFFFF;
+}
+#homeBase {
+	background:url(images/homeBase1.jpg) no-repeat;
+	height: 169px;
+	margin-bottom: 30px;
+}
+.homeBaseOne, .homeBaseTwo, .homeBaseThree {float:left; margin: 0 7px 2px 0;}
+.homeBaseOne {width: 239px;}
+.homeBaseTwo{width: 418px;}
+.homeBaseThree {width: 327px; margin-right: 0;}
+.homeBaseOne h3, .homeBaseTwo h3, .homeBaseThree h3 {color:#000000; height: 26px; line-height:26px; background: #f1f1f1; display:block; padding: 0 0 0 6px; margin:0; font-size: 14px;border: 1px solid #c1c1c1;}
+#homebaseTwoB {width: 246px; height: 118px; padding: 19px 0 0 170px; margin: 3px 0 0 0; background:url(images/smashboxNewsletter.jpg) no-repeat;border: 1px solid #c1c1c1;}
+#homebaseOneB {width: 236px; height: 137px; margin: 3px 0 3px 0; border: 1px solid #c1c1c1;}
+#homebaseThreeB {width: 326px; height: 137px; margin: 3px 0 3px 0; border: 1px solid #c1c1c1;}
+#homebaseTwoB tbody tr td {font-weight: bold;}
+#brandsTop {
+	width: 1004px;
+	min-height: 290px;
+	margin-top: 50px;
+}
+#brandsTop img {
+	float:left;
+	margin-right: 20px;
+}
+.ingredientsFont {
+	font-size: 10px;
+}
+.SmallBlackHeading, .Black {
+	color:#000000;
+	font-weight: bold;
+}
+hr {
+	border: none;
+	border-top: 1px dotted #959595;
+	clear:both;
+	line-height: 1px;
+	height: 1px;
+	margin-top: 20px;
+}
+img.left {
+	float:left;
+	margin-right: 25px;
+}

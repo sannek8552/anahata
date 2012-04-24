@@ -1,0 +1,17 @@
+tinyMCEPopup.requireLangPack();
+
+var action, orgTableWidth, orgTableHeight, dom = tinyMCEPopup.editor.dom;
+
+function insert_module(module_string)
+{
+	//alert('blah');
+	var inst = tinyMCEPopup.editor, dom = inst.dom;
+	//inst.execCommand('mceInsertContent', false, module_string);
+	tinyMCEPopup.execCommand('mceInsertContent', false, module_string);
+	
+	inst.addVisual();
+	//inst.execCommand('mceEndUndoLevel');
+	
+	tinyMCEPopup.close();
+	
+}

@@ -1,0 +1,214 @@
+<?php
+require_once('Admin_Header.php');
+require_once('classes/SettingsHolder.php');
+
+class AdminSettings extends Runmode 
+{
+	var $settings = array(							
+							array( 	'title' => 'Image size',
+									'save_name' => 'save_image',
+									'success_message' => 'Settings changed',
+									'fields' => array(
+														array('name' => 'height', 'alias' => 'Height', 'type' => 'int'),
+														array('name' => 'width', 'alias' => 'Width', 'type' => 'int')
+												)
+							),
+							
+							array(	'title' => 'Remind password',
+									'save_name' => 'save_remind',
+									'success_message' => 'Settings changed',
+									'fields' => array(
+														array('name' => 'remind_email', 'alias' => 'From email', 'type' => 'string'),
+														array('name' => 'remind_name', 'alias' => 'From name', 'type' => 'string'),
+														array('name' => 'remind_subject', 'alias' => 'Subject', 'type' => 'string')
+												)
+							),
+							
+							array( 	'title' => 'Payment options',
+									'save_name' => 'save_payment',
+									'success_message' => 'Settings changed',
+									'fields' => array(
+														array('name' => 'deposit', 'alias' => 'Enable direct deposit', 'type' => 'bool'),
+														array('name' => 'paypal', 'alias' => 'Enable paypal', 'type' => 'bool'),
+														array('name' => 'credit_card', 'alias' => 'Enable credit card', 'type' => 'bool')
+												)
+								
+							),
+							
+							array(	'title' => 'Emails',
+									'save_name' => 'save_email',
+									'success_message' => 'Settings changed',
+									'fields' => array(
+														array('name' => 'direct_deposit_email', 'alias' => 'Direct deposit payment notification send to', 'type' => 'string'),
+														array('name' => 'direct_deposit_from_email', 'alias' => 'Direct deposit payment info send from', 'type' => 'string'),
+														array('name' => 'direct_deposit_from_name', 'alias' => 'Direct deposit payment info send from name', 'type' => 'string'),
+														array('name' => 'credit_card_email', 'alias' => 'Credit card payment notification send to', 'type' => 'string'),
+														array('name' => 'credit_card_from_email', 'alias' => 'Credit card payment info send from', 'type' => 'string'),
+														array('name' => 'credit_card_name', 'alias' => 'Credit card payment info send from name', 'type' => 'string')
+												)
+							),
+							
+							array(	'title' => 'Items per page',
+									'save_name' => 'save_items',
+									'success_message' => 'Settings changed',
+									'fields' => array(
+														array('name' => 'products_per_page', 'alias' => 'Products per page', 'type' => 'string'),
+														array('name' => 'categories_per_page', 'alias' => 'Categories per page', 'type' => 'string')
+												)
+							),
+							
+							array(	'title' => 'Online store menu',
+									'save_name' => 'save_store',
+									'success_message' => 'Settings changed',
+									'fields' => array(
+														array('name' => 'show_on_top','alias' => 'Show on top menu','type' => 'bool'),
+														array('name' => 'show_on_right','alias' => 'Show on right menu','type' => 'bool')
+												)
+							),
+						);
+	
+	function AdminSettings()
+	{
+		parent::Runmode();
+				
+	}
+	
+	function process()
+	{
+		
+		if (isset($_REQUEST['save']) && !empty($_REQUEST['save']))
+		{
+			if (isset($_REQUEST['height']) && !empty($_REQUEST['height']))
+			{
+				if (isset($_REQUEST['width']) && !empty($_REQUEST['width']))
+				{
+					$data = array();
+					$data['height'] = $_REQUEST['height'];
+					$data['width'] = $_REQUEST['width'];
+					$GLOBALS['core.store']->save('settings',$data,array('key_name' => 'id','key_value' => 1));
+					$GLOBALS['core.smarty']->assign('settings_good',1);
+				}
+			}
+		}
+		
+		if (isset($_REQUEST['save_remind']) && !empty($_REQUEST['save_remind']))
+		{
+			$data = array();
+			$data['remind_email'] = '';
+			$data['remind_name'] = '';
+			$data['remind_subject'] = '';
+			
+			if (isset($_REQUEST['remind_email']) && !empty($_REQUEST['remind_email'])) $data['remind_email'] = $_REQUEST['remind_email'];
+			if (isset($_REQUEST['remind_name']) && !empty($_REQUEST['remind_name'])) $data['remind_name'] = $_REQUEST['remind_name'];
+			if (isset($_REQUEST['remind_subject']) && !empty($_REQUEST['remind_subject'])) $data['remind_subject'] = $_REQUEST['remind_subject'];
+			
+			$GLOBALS['core.store']->save('settings',$data,array('key_name' => 'id','key_value' => 1));
+			$GLOBALS['core.smarty']->assign('reminds_good',1);
+		}
+		
+		if (isset($_REQUEST['save_payment']) && !empty($_REQUEST['save_payment']))
+		{
+			$data = array();
+			$data['deposit'] = 0;
+			$data['paypal'] = 0;
+			$data['credit_card'] = 0;
+			
+			if (isset($_REQUEST['deposit']) && !empty($_REQUEST['deposit'])) $data['deposit'] = 1;
+			if (isset($_REQUEST['paypal']) && !empty($_REQUEST['paypal'])) $data['paypal'] = 1;
+			if (isset($_REQUEST['credit_card']) && !empty($_REQUEST['credit_card'])) $data['credit_card'] = 1;
+			
+			$GLOBALS['core.store']->save('settings',$data,array('key_name' => 'id','key_value' => 1));
+			$GLOBALS['core.smarty']->assign('payments_good',1);
+		}
+		
+		if (isset($_REQUEST['save_email']) && !empty($_REQUEST['save_email']))
+		{
+			$data = array();
+						
+			if (isset($_REQUEST['direct_deposit_email']) && !empty($_REQUEST['direct_deposit_email'])) $data['direct_deposit_email'] = $_REQUEST['direct_deposit_email'];
+			if (isset($_REQUEST['direct_deposit_from_email']) && !empty($_REQUEST['direct_deposit_from_email'])) $data['direct_deposit_from_email'] = $_REQUEST['direct_deposit_from_email'];
+			if (isset($_REQUEST['direct_deposit_from_name']) && !empty($_REQUEST['direct_deposit_from_name'])) $data['direct_deposit_from_name'] = $_REQUEST['direct_deposit_from_name'];
+			
+			if (isset($_REQUEST['paypal_email']) && !empty($_REQUEST['paypal_email'])) $data['paypal_email'] = $_REQUEST['paypal_email'];
+			if (isset($_REQUEST['paypal_from_email']) && !empty($_REQUEST['paypal_from_email'])) $data['paypal_from_email'] = $_REQUEST['paypal_from_email'];
+			if (isset($_REQUEST['paypal_from_name']) && !empty($_REQUEST['paypal_from_name'])) $data['paypal_from_name'] = $_REQUEST['paypal_from_name'];
+
+			if (isset($_REQUEST['credit_card_email']) && !empty($_REQUEST['credit_card_email'])) $data['credit_card_email'] = $_REQUEST['credit_card_email'];
+			if (isset($_REQUEST['credit_card_from_email']) && !empty($_REQUEST['credit_card_from_email'])) $data['credit_card_from_email'] = $_REQUEST['credit_card_from_email'];
+			if (isset($_REQUEST['credit_card_from_name']) && !empty($_REQUEST['credit_card_from_name'])) $data['credit_card_from_name'] = $_REQUEST['credit_card_from_name'];
+			
+			if (!empty($data))
+			{
+				$GLOBALS['core.store']->save('settings',$data,array('key_name' => 'id','key_value' => 1));
+				$GLOBALS['core.smarty']->assign('emails_good',1);
+			}
+		}
+		
+		if (isset($_REQUEST['save_pages']) && !empty($_REQUEST['save_pages']))
+		{
+			$data = array();
+			//$data['paypal'] = 0;
+			//$data['credit_card'] = 0;
+			
+			if (isset($_REQUEST['products_per_page']) && !empty($_REQUEST['products_per_page'])) $data['products_per_page'] = $_REQUEST['products_per_page'];
+			if (isset($_REQUEST['categories_per_page']) && !empty($_REQUEST['categories_per_page'])) $data['categories_per_page'] = $_REQUEST['categories_per_page'];
+			if (!empty($data))
+			{
+				$GLOBALS['core.store']->save('settings',$data,array('key_name' => 'id','key_value' => 1));
+				$GLOBALS['core.smarty']->assign('pages_good',1);
+			}
+		}
+		
+		
+		$sm = new SettingsHolder();
+		foreach ($this->settings as $section)
+		{
+			if (isset($_REQUEST[$section['save_name']]) && !empty($_REQUEST[$section['save_name']]))
+			{
+				$to_save = array();
+				foreach ($section['fields'] as $field)
+					$to_save[$field['name']] = $this->process_setting_field($_REQUEST,$field);
+				
+				
+				$sm->saveSettings($to_save);
+			}
+		}
+		
+		$new_settngs = $sm->loadSettings();
+		foreach ($this->settings as $key => $section)
+		{
+			foreach ($section['fields'] as $k => $field)
+			{
+				if (isset($new_settngs[$field['name']])) $this->settings[$key]['fields'][$k]['value'] = $new_settngs[$field['name']];
+			}
+		}
+		
+		
+		$settings = $GLOBALS['core.sql']->getRow("select * from #p#settings ");
+		$GLOBALS['core.smarty']->assign('settings',$settings);
+		
+		$GLOBALS['core.smarty']->assign('setting_list',$this->settings);
+		return Admin_Header::out('admin_settings');
+	}
+	
+	function process_setting_field($request,$field)
+	{
+		$to_ret = '';
+		if ($field['type'] == 'bool')
+		{
+			$to_ret = (isset($_REQUEST[$field['name']]) && !empty($_REQUEST[$field['name']])) ? 1 : 0;
+		}
+		elseif ($field['type'] == 'int')
+		{
+			$to_ret = (isset($_REQUEST[$field['name']]) && !empty($_REQUEST[$field['name']])) ? $_REQUEST[$field['name']] : 0;
+		}
+		elseif ($field['type'] == 'string')
+		{
+			$to_ret = (isset($_REQUEST[$field['name']]) && !empty($_REQUEST[$field['name']])) ? $_REQUEST[$field['name']] : '';
+		}
+		return $to_ret;
+	}
+}
+
+
+?>
