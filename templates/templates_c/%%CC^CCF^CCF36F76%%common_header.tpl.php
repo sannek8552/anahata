@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-25 12:57:26
+<?php /* Smarty version 2.6.18, created on 2012-04-25 18:26:24
          compiled from common_header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'common_header.tpl', 1, false),array('function', 'seo_url', 'common_header.tpl', 59, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'common_header.tpl', 1, false),array('function', 'seo_url', 'common_header.tpl', 58, false),)), $this); ?>
 <?php echo smarty_function_config_load(array('file' => "templates.ini",'section' => 'common','scope' => 'global'), $this);?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -17,8 +17,6 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load
 
 <link href="<?php echo $this->_config[0]['vars']['css_url']; ?>
 main.css?1=2" rel="stylesheet" type="text/css" />
-<link href="<?php echo $this->_config[0]['vars']['css_url']; ?>
-style.css" rel="stylesheet" type="text/css" />
 <link  href="<?php echo $this->_config[0]['vars']['css_url']; ?>
 slimbox.css" rel="stylesheet" type="text/css" media="screen" />
 <link  href="<?php echo $this->_config[0]['vars']['css_url']; ?>
@@ -84,12 +82,15 @@ test_banner.png" alt=""/>
         </div>
         <div id="menu">
             <ul>
-                <li class="active"><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
+                <li><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
 <?php echo smarty_function_seo_url(array('rm' => 'index'), $this);?>
 ">Главная</a></li>
                 <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == 'О нас'): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
 <?php echo smarty_function_seo_url(array('rm' => 'About'), $this);?>
 ">О нас</a></li>
+                <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == 'Расписание'): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
+<?php echo smarty_function_seo_url(array('rm' => 'schedule'), $this);?>
+">Расписание</a></li>
             </ul>
 
         </div>

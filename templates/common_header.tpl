@@ -55,8 +55,9 @@
         </div>
         <div id="menu">
             <ul>
-                <li class="active"><a href="{#script_url#}{seo_url rm='index'}">Главная</a></li>
+                <li><a href="{#script_url#}{seo_url rm='index'}">Главная</a></li>
                 <li {if $seo_data.page_title == 'О нас'}class="active"{/if}><a href="{#script_url#}{seo_url rm='About'}">О нас</a></li>
+                <li {if $seo_data.page_title == 'Расписание'}class="active"{/if}><a href="{#script_url#}{seo_url rm='schedule'}">Расписание</a></li>
             </ul>
 
         </div>

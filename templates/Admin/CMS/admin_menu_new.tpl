@@ -142,6 +142,7 @@ var menu_tree = {$menu_tree};
 {literal}
 tinyMCE.init({
 		// General options
+                language : "ru", 
 		mode : "exact",
 		elements: "simple_module_contentid",
                 width:"900",
