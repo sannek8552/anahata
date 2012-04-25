@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-24 13:42:49
+<?php /* Smarty version 2.6.18, created on 2012-04-25 09:38:49
          compiled from Common/CMS/Page_Runmode/news_module_short_list.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'Common/CMS/Page_Runmode/news_module_short_list.tpl', 1, false),array('function', 'seo_url', 'Common/CMS/Page_Runmode/news_module_short_list.tpl', 13, false),array('modifier', 'date_format', 'Common/CMS/Page_Runmode/news_module_short_list.tpl', 5, false),array('modifier', 'escape', 'Common/CMS/Page_Runmode/news_module_short_list.tpl', 7, false),)), $this); ?>

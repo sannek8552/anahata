@@ -1,11 +1,11 @@
-ErrorDocument 404 /odevajka/pear_error_runmode.html
+ErrorDocument 404 /anahata/pear_error_runmode.html
 
 php_flag magic_quotes_gpc 0
 php_flag register_globals 0
 php_value memory_limit 3774873600
 
 RewriteEngine On
-RewriteBase /odevajka/
+RewriteBase /anahata/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)\.html$ index.php?params_to_parse=$1 [L]
