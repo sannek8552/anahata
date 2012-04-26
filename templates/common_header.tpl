@@ -8,6 +8,7 @@
 {if $seo_data.keywords}<meta name="keywords" content="{$seo_data.keywords}" />{/if}
 
 {*<link href="{#img_url#}favico.ico" rel="shortcut icon" type="image/x-icon" />*}
+<link rel="image_src" href="{#img_url#}logo.png" />
 <link href="{#css_url#}main.css?1=2" rel="stylesheet" type="text/css" />
 <link  href="{#css_url#}slimbox.css" rel="stylesheet" type="text/css" media="screen" />
 <link  href="{#css_url#}jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css"/>
@@ -24,8 +25,9 @@
 <script type="text/javascript" src="{#js_url#}jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="{#js_url#}jquery-ui-1.8.16.custom.min.js"></script>
 <script type="text/javascript" src="{#js_url#}jquery.placeholder.min.js"></script>
+{literal} 
 <script type="text/javascript">        
-    {literal}        
+           
         $(document).ready(function(){
             jQuery('input[placeholder], textarea[placeholder]').placeholder();
             //init_additional();
@@ -39,8 +41,17 @@
 
             
         });
-{/literal}        
+        
     </script>
+
+
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
+<script type="text/javascript" src="http://vk.com/js/api/share.js?11" charset="windows-1251"></script>
+<script type="text/javascript">
+  VK.init({apiId: 2923829, onlyWidgets: true});
+</script>
+{/literal}
+
 </head>
 <body>
 <div id="wrapper">
@@ -58,6 +69,7 @@
                 <li><a href="{#script_url#}{seo_url rm='index'}">Главная</a></li>
                 <li {if $seo_data.page_title == 'О нас'}class="active"{/if}><a href="{#script_url#}{seo_url rm='About'}">О нас</a></li>
                 <li {if $seo_data.page_title == 'Расписание'}class="active"{/if}><a href="{#script_url#}{seo_url rm='schedule'}">Расписание</a></li>
+                <li {if $seo_data.page_title == 'Фотогалерея'}class="active"{/if}><a href="{#script_url#}{seo_url rm='Photogallery'}">Фотогалерея</a></li>
             </ul>
 
         </div>

@@ -208,3 +208,11 @@ input[type=text], input[type=password] {width: 300px;}
 #search.block {height: 50px;}
 
 #search.block input {width: 150px; padding: 4px 5px; margin-top: 3px;}
+
+#news .date {color: #575957; padding-right: 10px;}
+#news .item {padding-bottom: 15px;}
+#news .news_logo {float: left; margin: 0 10px 10px 0;}
+
+#news .social {float: right;}
+
+#vk_comments {margin-top: 20px;}

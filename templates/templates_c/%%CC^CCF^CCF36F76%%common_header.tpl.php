@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-25 18:26:24
+<?php /* Smarty version 2.6.18, created on 2012-04-26 09:48:35
          compiled from common_header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'common_header.tpl', 1, false),array('function', 'seo_url', 'common_header.tpl', 58, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'common_header.tpl', 1, false),array('function', 'seo_url', 'common_header.tpl', 69, false),)), $this); ?>
 <?php echo smarty_function_config_load(array('file' => "templates.ini",'section' => 'common','scope' => 'global'), $this);?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -15,6 +15,8 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load
 <?php if ($this->_tpl_vars['seo_data']['keywords']): ?><meta name="keywords" content="<?php echo $this->_tpl_vars['seo_data']['keywords']; ?>
 " /><?php endif; ?>
 
+<link rel="image_src" href="<?php echo $this->_config[0]['vars']['img_url']; ?>
+logo.png" />
 <link href="<?php echo $this->_config[0]['vars']['css_url']; ?>
 main.css?1=2" rel="stylesheet" type="text/css" />
 <link  href="<?php echo $this->_config[0]['vars']['css_url']; ?>
@@ -44,8 +46,9 @@ jquery-1.6.2.min.js"></script>
 jquery-ui-1.8.16.custom.min.js"></script>
 <script type="text/javascript" src="<?php echo $this->_config[0]['vars']['js_url']; ?>
 jquery.placeholder.min.js"></script>
+<?php echo ' 
 <script type="text/javascript">        
-    <?php echo '        
+           
         $(document).ready(function(){
             jQuery(\'input[placeholder], textarea[placeholder]\').placeholder();
             //init_additional();
@@ -63,9 +66,18 @@ jquery.placeholder.min.js"></script>
 
             
         });
-'; ?>
         
     </script>
+
+
+<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
+<script type="text/javascript" src="http://vk.com/js/api/share.js?11" charset="windows-1251"></script>
+<script type="text/javascript">
+  VK.init({apiId: 2923829, onlyWidgets: true});
+</script>
+'; ?>
+
+
 </head>
 <body>
 <div id="wrapper">
@@ -91,6 +103,9 @@ test_banner.png" alt=""/>
                 <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == 'Расписание'): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
 <?php echo smarty_function_seo_url(array('rm' => 'schedule'), $this);?>
 ">Расписание</a></li>
+                <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == 'Фотогалерея'): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
+<?php echo smarty_function_seo_url(array('rm' => 'Photogallery'), $this);?>
+">Фотогалерея</a></li>
             </ul>
 
         </div>

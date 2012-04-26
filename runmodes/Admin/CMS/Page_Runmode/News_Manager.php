@@ -94,7 +94,12 @@ class News_Manager extends Runmode
 			$data['short'] = $_REQUEST['short'];
 			$data['full'] = $_REQUEST['full'];
 			$data['adddate'] = $_REQUEST['adddate'];
-			$data['addtime'] = $_REQUEST['Time_Hour'].':'.$_REQUEST['Time_Minute'];
+			//$data['addtime'] = $_REQUEST['Time_Hour'].':'.$_REQUEST['Time_Minute'];
+
+                        $newimage = $this->file_save();
+                        if ($newimage) {
+                            $data['image'] = $newimage;
+                        }
 
 
 			if(isset($_REQUEST['hid_news_id']) && is_numeric($_REQUEST['hid_news_id']))
@@ -157,5 +162,49 @@ class News_Manager extends Runmode
 		//$GLOBALS['core.smarty']->assign('news_entries', $news_entries);
 		return Admin_Header::out('CMS/Page_Runmode/news_manager_entry');
 	}
+
+        function upload_file($file, $filedirectory)
+        {
+                if(!is_null($filedirectory) && is_dir($filedirectory))
+                {
+                        $filedirectory = trim($filedirectory, "/");
+                        $pathfile = pathinfo($file);
+                        $j = 1;
+                        while(file_exists($filedirectory.'/'.$file))
+                        {
+                        $file = $pathfile['filename'].'('.$j.').'.$pathfile['extension'];
+                        $j++;
+                        }
+                        return $file;
+                }
+                else
+                {
+                        exit('dirrectory error');
+                }
+        }
+
+        function file_save()
+        {
+                $file = null;
+                if (isset($_FILES['file']['name']) && $_FILES['file']['error'] != 4)
+                {
+                    if (isset($_REQUEST['id'])) {
+                        $file_to_delete = $GLOBALS['core.sql']->getOne("SELECT image FROM #p#news_module_entry WHERE id = ?",array($_REQUEST['id']));
+                        if (!empty($file_to_delete)) {
+                            if (file_exists('./upload/'.$file_to_delete)) {
+                                unlink('./upload/'.$file_to_delete);
+                                unlink('./upload/200_'.$file_to_delete);
+                            }
+                        }
+                    }
+                    $filename = $this->upload_file($_FILES['file']['name'],'./upload/');
+                    if (move_uploaded_file($_FILES['file']['tmp_name'],'./upload/'.$filename)) {
+                        $GLOBALS['core.image']->create_thumb_crop('./upload/'.$filename, './upload/200_'. $filename, 200,  150);
+                        $file = $filename;
+                    }
+
+                }
+                return $file;
+        }
 }
 ?>

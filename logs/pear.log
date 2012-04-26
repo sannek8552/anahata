@@ -82353,3 +82353,1315 @@ PEAR_Error Object
         )
 
 )
+---------------------------------------------------------------------------------------
+
+
+
+Date : 04.26.2012 07:16:25
+
+
+
+Array
+(
+    [params_to_parse] => index
+    [__utma] => 140956466.2070435294.1320310375.1331008552.1331030418.31
+    [__utmz] => 140956466.1320310375.1.1.utmcsr=autoval.ru|utmccn=(referral)|utmcmd=referral|utmcct=/API/market/php/catalog/out_cat.php
+    [MOODLEID_] => %F0%CD%10B%B6v
+    [PHPSESSID] => e7e026cdfb1ae59e4603bde8e80c5a07
+    [rm] => index
+    [params_to_pars] => Array
+        (
+        )
+
+)
+PEAR_Error Object
+(
+    [error_message_prefix] => 
+    [mode] => 16
+    [level] => 1024
+    [code] => object not defined
+    [message] => object not defined
+    [userinfo] => 
+    [backtrace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\PEAR.php
+                    [line] => 200
+                    [function] => PEAR_Error
+                    [class] => PEAR_Error
+                    [object] => PEAR_Error Object
+ *RECURSION*
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => object not defined
+                            [1] => object not defined
+                            [2] => 16
+                            [3] => Array
+                                (
+                                    [0] => PEAR_Callback Object
+                                        (
+                                        )
+
+                                    [1] => handle
+                                )
+
+                            [4] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\Database\DB_MySQL_Query.php
+                    [line] => 51
+                    [function] => raiseError
+                    [class] => PEAR
+                    [object] => DB_MySQL_Query Object
+                        (
+                            [db_object] => 
+                            [db_user] => sannek
+                            [db_password] => jktxrff
+                            [db_host] => localhost
+                            [database] => anahata
+                            [persistent] => n
+                            [real_escape] => 
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => object not defined
+                            [1] => object not defined
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\Database\DB_Factory.php
+                    [line] => 27
+                    [function] => DB_MySQL_Query
+                    [class] => DB_MySQL_Query
+                    [object] => DB_MySQL_Query Object
+                        (
+                            [db_object] => 
+                            [db_user] => sannek
+                            [db_password] => jktxrff
+                            [db_host] => localhost
+                            [database] => anahata
+                            [persistent] => n
+                            [real_escape] => 
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\Database\Abstract_SQL_Query.php
+                    [line] => 25
+                    [function] => create
+                    [class] => DB_Factory
+                    [object] => Abstract_SQL_Query Object
+                        (
+                            [query_object] => 
+                            [config] => Array
+                                (
+                                    [class] => Abstract_SQL_Query
+                                    [names] => utf8
+                                    [global] => sql
+                                    [path] => Database
+                                    [auto] => y
+                                )
+
+                            [names] => utf8
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [class] => Abstract_SQL_Query
+                                    [names] => utf8
+                                    [global] => sql
+                                    [path] => Database
+                                    [auto] => y
+                                )
+
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\Application.php
+                    [line] => 87
+                    [function] => init
+                    [class] => Abstract_SQL_Query
+                    [object] => Abstract_SQL_Query Object
+                        (
+                            [query_object] => 
+                            [config] => Array
+                                (
+                                    [class] => Abstract_SQL_Query
+                                    [names] => utf8
+                                    [global] => sql
+                                    [path] => Database
+                                    [auto] => y
+                                )
+
+                            [names] => utf8
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\Application.php
+                    [line] => 29
+                    [function] => init_module
+                    [class] => Application
+                    [object] => Application Object
+                        (
+                            [application_conf] => Array
+                                (
+                                    [logger] => Array
+                                        (
+                                            [class] => Logger
+                                            [global] => log
+                                            [path] => Logger
+                                            [store] => logs
+                                            [accept] => test
+                                            [flush] => n
+                                            [max_size] => 1048576
+                                            [auto] => y
+                                        )
+
+                                    [cache] => Array
+                                        (
+                                            [class] => FileCache
+                                            [global] => cache
+                                            [path] => Cache
+                                            [auto] => y
+                                        )
+
+                                    [pear_callback_module] => Array
+                                        (
+                                            [class] => PEAR_Callback
+                                            [global] => pear_callback
+                                            [auto] => y
+                                        )
+
+                                    [ajax_module] => Array
+                                        (
+                                            [class] => Ajax_Cover
+                                            [global] => ajax
+                                            [path] => Ajax
+                                            [auto] => n
+                                        )
+
+                                    [smarty_module] => Array
+                                        (
+                                            [class] => Smarty_cover
+                                            [global] => smarty
+                                            [path] => Smarty
+                                            [auto] => y
+                                        )
+
+                                    [database_module] => Array
+                                        (
+                                            [class] => Abstract_SQL_Query
+                                            [names] => utf8
+                                            [global] => sql
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [store_module] => Array
+                                        (
+                                            [class] => DB_Store
+                                            [global] => store
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [session_module] => Array
+                                        (
+                                            [class] => Session
+                                            [global] => session
+                                            [path] => Session
+                                            [auto] => y
+                                        )
+
+                                    [auth_module] => Array
+                                        (
+                                            [class] => Authoriser_New
+                                            [global] => auth
+                                            [path] => User
+                                            [auto] => y
+                                            [login_field] => login
+                                            [password_field] => password
+                                        )
+
+                                    [validator_module] => Array
+                                        (
+                                            [class] => Validator
+                                            [global] => validator
+                                            [path] => Validator
+                                            [auto] => n
+                                        )
+
+                                    [gd_module] => Array
+                                        (
+                                            [class] => Image
+                                            [global] => image
+                                            [path] => Image
+                                            [auto] => n
+                                        )
+
+                                    [list] => Array
+                                        (
+                                            [class] => SList
+                                            [global] => list
+                                            [path] => List
+                                            [auto] => n
+                                        )
+
+                                    [tree] => Array
+                                        (
+                                            [class] => Tree
+                                            [global] => tree
+                                            [path] => Tree
+                                            [auto] => y
+                                        )
+
+                                    [tree_data] => Array
+                                        (
+                                            [class] => Tree_Data_Manager
+                                            [global] => tree_data
+                                            [path] => Tree
+                                            [auto] => n
+                                        )
+
+                                    [mailer_module] => Array
+                                        (
+                                            [class] => Mailer
+                                            [global] => mail
+                                            [path] => Mail
+                                            [auto] => n
+                                        )
+
+                                    [xml] => Array
+                                        (
+                                            [class] => Parser_Xml_Array
+                                            [global] => xml
+                                            [path] => XML
+                                            [auto] => n
+                                        )
+
+                                    [runmode_module] => Array
+                                        (
+                                            [class] => Config_Resource_New
+                                            [global] => runmode
+                                            [path] => Runmode
+                                            [auto] => y
+                                            [default] => Show_Page
+                                            [auth] => Login
+                                            [not_found] => Show_Page
+                                            [rm_parameter] => rm
+                                        )
+
+                                )
+
+                            [global_prefix] => core.
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => database_module
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\index.php
+                    [line] => 31
+                    [function] => run
+                    [class] => Application
+                    [object] => Application Object
+                        (
+                            [application_conf] => Array
+                                (
+                                    [logger] => Array
+                                        (
+                                            [class] => Logger
+                                            [global] => log
+                                            [path] => Logger
+                                            [store] => logs
+                                            [accept] => test
+                                            [flush] => n
+                                            [max_size] => 1048576
+                                            [auto] => y
+                                        )
+
+                                    [cache] => Array
+                                        (
+                                            [class] => FileCache
+                                            [global] => cache
+                                            [path] => Cache
+                                            [auto] => y
+                                        )
+
+                                    [pear_callback_module] => Array
+                                        (
+                                            [class] => PEAR_Callback
+                                            [global] => pear_callback
+                                            [auto] => y
+                                        )
+
+                                    [ajax_module] => Array
+                                        (
+                                            [class] => Ajax_Cover
+                                            [global] => ajax
+                                            [path] => Ajax
+                                            [auto] => n
+                                        )
+
+                                    [smarty_module] => Array
+                                        (
+                                            [class] => Smarty_cover
+                                            [global] => smarty
+                                            [path] => Smarty
+                                            [auto] => y
+                                        )
+
+                                    [database_module] => Array
+                                        (
+                                            [class] => Abstract_SQL_Query
+                                            [names] => utf8
+                                            [global] => sql
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [store_module] => Array
+                                        (
+                                            [class] => DB_Store
+                                            [global] => store
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [session_module] => Array
+                                        (
+                                            [class] => Session
+                                            [global] => session
+                                            [path] => Session
+                                            [auto] => y
+                                        )
+
+                                    [auth_module] => Array
+                                        (
+                                            [class] => Authoriser_New
+                                            [global] => auth
+                                            [path] => User
+                                            [auto] => y
+                                            [login_field] => login
+                                            [password_field] => password
+                                        )
+
+                                    [validator_module] => Array
+                                        (
+                                            [class] => Validator
+                                            [global] => validator
+                                            [path] => Validator
+                                            [auto] => n
+                                        )
+
+                                    [gd_module] => Array
+                                        (
+                                            [class] => Image
+                                            [global] => image
+                                            [path] => Image
+                                            [auto] => n
+                                        )
+
+                                    [list] => Array
+                                        (
+                                            [class] => SList
+                                            [global] => list
+                                            [path] => List
+                                            [auto] => n
+                                        )
+
+                                    [tree] => Array
+                                        (
+                                            [class] => Tree
+                                            [global] => tree
+                                            [path] => Tree
+                                            [auto] => y
+                                        )
+
+                                    [tree_data] => Array
+                                        (
+                                            [class] => Tree_Data_Manager
+                                            [global] => tree_data
+                                            [path] => Tree
+                                            [auto] => n
+                                        )
+
+                                    [mailer_module] => Array
+                                        (
+                                            [class] => Mailer
+                                            [global] => mail
+                                            [path] => Mail
+                                            [auto] => n
+                                        )
+
+                                    [xml] => Array
+                                        (
+                                            [class] => Parser_Xml_Array
+                                            [global] => xml
+                                            [path] => XML
+                                            [auto] => n
+                                        )
+
+                                    [runmode_module] => Array
+                                        (
+                                            [class] => Config_Resource_New
+                                            [global] => runmode
+                                            [path] => Runmode
+                                            [auto] => y
+                                            [default] => Show_Page
+                                            [auth] => Login
+                                            [not_found] => Show_Page
+                                            [rm_parameter] => rm
+                                        )
+
+                                )
+
+                            [global_prefix] => core.
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [callback] => Array
+        (
+            [0] => PEAR_Callback Object
+                (
+                )
+
+            [1] => handle
+        )
+
+)
+---------------------------------------------------------------------------------------
+
+
+
+Date : 04.26.2012 09:13:39
+
+
+
+Array
+(
+    [params_to_parse] => News_Manager_Entry/6/1
+    [name] => 123
+    [short] => <p>123</p>
+    [full] => <p>123</p>
+    [adddate] => 2012-04-26
+    [hid_id] => 23
+    [hid_news_id] => 6
+    [send] => Сохранить
+    [TinyMCE_fullid_size] => cw=676&ch=203
+    [__utma] => 140956466.2070435294.1320310375.1331008552.1331030418.31
+    [__utmz] => 140956466.1320310375.1.1.utmcsr=autoval.ru|utmccn=(referral)|utmcmd=referral|utmcct=/API/market/php/catalog/out_cat.php
+    [MOODLEID_] => %F0%CD%10B%B6v
+    [PHPSESSID] => e7e026cdfb1ae59e4603bde8e80c5a07
+    [rm] => News_Manager_Entry
+    [params_to_pars] => Array
+        (
+            [0] => 6
+            [1] => 1
+        )
+
+)
+PEAR_Error Object
+(
+    [error_message_prefix] => 
+    [mode] => 16
+    [level] => 1024
+    [code] => e_invalid_param
+    [message] => no global variable set
+    [userinfo] => 
+    [backtrace] => Array
+        (
+            [0] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\PEAR.php
+                    [line] => 200
+                    [function] => PEAR_Error
+                    [class] => PEAR_Error
+                    [object] => PEAR_Error Object
+ *RECURSION*
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => no global variable set
+                            [1] => e_invalid_param
+                            [2] => 16
+                            [3] => Array
+                                (
+                                    [0] => PEAR_Callback Object
+                                        (
+                                        )
+
+                                    [1] => handle
+                                )
+
+                            [4] => 
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\Application.php
+                    [line] => 46
+                    [function] => raiseError
+                    [class] => PEAR
+                    [object] => Application Object
+                        (
+                            [application_conf] => Array
+                                (
+                                    [logger] => Array
+                                        (
+                                            [class] => Logger
+                                            [global] => log
+                                            [path] => Logger
+                                            [store] => logs
+                                            [accept] => test
+                                            [flush] => n
+                                            [max_size] => 1048576
+                                            [auto] => y
+                                        )
+
+                                    [cache] => Array
+                                        (
+                                            [class] => FileCache
+                                            [global] => cache
+                                            [path] => Cache
+                                            [auto] => y
+                                        )
+
+                                    [pear_callback_module] => Array
+                                        (
+                                            [class] => PEAR_Callback
+                                            [global] => pear_callback
+                                            [auto] => y
+                                        )
+
+                                    [ajax_module] => Array
+                                        (
+                                            [class] => Ajax_Cover
+                                            [global] => ajax
+                                            [path] => Ajax
+                                            [auto] => n
+                                        )
+
+                                    [smarty_module] => Array
+                                        (
+                                            [class] => Smarty_cover
+                                            [global] => smarty
+                                            [path] => Smarty
+                                            [auto] => y
+                                        )
+
+                                    [database_module] => Array
+                                        (
+                                            [class] => Abstract_SQL_Query
+                                            [names] => utf8
+                                            [global] => sql
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [store_module] => Array
+                                        (
+                                            [class] => DB_Store
+                                            [global] => store
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [session_module] => Array
+                                        (
+                                            [class] => Session
+                                            [global] => session
+                                            [path] => Session
+                                            [auto] => y
+                                        )
+
+                                    [auth_module] => Array
+                                        (
+                                            [class] => Authoriser_New
+                                            [global] => auth
+                                            [path] => User
+                                            [auto] => y
+                                            [login_field] => login
+                                            [password_field] => password
+                                        )
+
+                                    [validator_module] => Array
+                                        (
+                                            [class] => Validator
+                                            [global] => validator
+                                            [path] => Validator
+                                            [auto] => n
+                                        )
+
+                                    [gd_module] => Array
+                                        (
+                                            [class] => Image
+                                            [global] => image
+                                            [path] => Image
+                                            [auto] => n
+                                        )
+
+                                    [list] => Array
+                                        (
+                                            [class] => SList
+                                            [global] => list
+                                            [path] => List
+                                            [auto] => n
+                                        )
+
+                                    [tree] => Array
+                                        (
+                                            [class] => Tree
+                                            [global] => tree
+                                            [path] => Tree
+                                            [auto] => y
+                                        )
+
+                                    [tree_data] => Array
+                                        (
+                                            [class] => Tree_Data_Manager
+                                            [global] => tree_data
+                                            [path] => Tree
+                                            [auto] => n
+                                        )
+
+                                    [mailer_module] => Array
+                                        (
+                                            [class] => Mailer
+                                            [global] => mail
+                                            [path] => Mail
+                                            [auto] => n
+                                        )
+
+                                    [xml] => Array
+                                        (
+                                            [class] => Parser_Xml_Array
+                                            [global] => xml
+                                            [path] => XML
+                                            [auto] => n
+                                        )
+
+                                    [runmode_module] => Array
+                                        (
+                                            [class] => Config_Resource_New
+                                            [global] => runmode
+                                            [path] => Runmode
+                                            [auto] => y
+                                            [default] => Show_Page
+                                            [auth] => Login
+                                            [not_found] => Show_Page
+                                            [rm_parameter] => rm
+                                        )
+
+                                )
+
+                            [global_prefix] => core.
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => no global variable set
+                            [1] => e_invalid_param
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\Runmode\Config_Resource_New.php
+                    [line] => 95
+                    [function] => init_module
+                    [class] => Application
+                    [object] => Application Object
+                        (
+                            [application_conf] => Array
+                                (
+                                    [logger] => Array
+                                        (
+                                            [class] => Logger
+                                            [global] => log
+                                            [path] => Logger
+                                            [store] => logs
+                                            [accept] => test
+                                            [flush] => n
+                                            [max_size] => 1048576
+                                            [auto] => y
+                                        )
+
+                                    [cache] => Array
+                                        (
+                                            [class] => FileCache
+                                            [global] => cache
+                                            [path] => Cache
+                                            [auto] => y
+                                        )
+
+                                    [pear_callback_module] => Array
+                                        (
+                                            [class] => PEAR_Callback
+                                            [global] => pear_callback
+                                            [auto] => y
+                                        )
+
+                                    [ajax_module] => Array
+                                        (
+                                            [class] => Ajax_Cover
+                                            [global] => ajax
+                                            [path] => Ajax
+                                            [auto] => n
+                                        )
+
+                                    [smarty_module] => Array
+                                        (
+                                            [class] => Smarty_cover
+                                            [global] => smarty
+                                            [path] => Smarty
+                                            [auto] => y
+                                        )
+
+                                    [database_module] => Array
+                                        (
+                                            [class] => Abstract_SQL_Query
+                                            [names] => utf8
+                                            [global] => sql
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [store_module] => Array
+                                        (
+                                            [class] => DB_Store
+                                            [global] => store
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [session_module] => Array
+                                        (
+                                            [class] => Session
+                                            [global] => session
+                                            [path] => Session
+                                            [auto] => y
+                                        )
+
+                                    [auth_module] => Array
+                                        (
+                                            [class] => Authoriser_New
+                                            [global] => auth
+                                            [path] => User
+                                            [auto] => y
+                                            [login_field] => login
+                                            [password_field] => password
+                                        )
+
+                                    [validator_module] => Array
+                                        (
+                                            [class] => Validator
+                                            [global] => validator
+                                            [path] => Validator
+                                            [auto] => n
+                                        )
+
+                                    [gd_module] => Array
+                                        (
+                                            [class] => Image
+                                            [global] => image
+                                            [path] => Image
+                                            [auto] => n
+                                        )
+
+                                    [list] => Array
+                                        (
+                                            [class] => SList
+                                            [global] => list
+                                            [path] => List
+                                            [auto] => n
+                                        )
+
+                                    [tree] => Array
+                                        (
+                                            [class] => Tree
+                                            [global] => tree
+                                            [path] => Tree
+                                            [auto] => y
+                                        )
+
+                                    [tree_data] => Array
+                                        (
+                                            [class] => Tree_Data_Manager
+                                            [global] => tree_data
+                                            [path] => Tree
+                                            [auto] => n
+                                        )
+
+                                    [mailer_module] => Array
+                                        (
+                                            [class] => Mailer
+                                            [global] => mail
+                                            [path] => Mail
+                                            [auto] => n
+                                        )
+
+                                    [xml] => Array
+                                        (
+                                            [class] => Parser_Xml_Array
+                                            [global] => xml
+                                            [path] => XML
+                                            [auto] => n
+                                        )
+
+                                    [runmode_module] => Array
+                                        (
+                                            [class] => Config_Resource_New
+                                            [global] => runmode
+                                            [path] => Runmode
+                                            [auto] => y
+                                            [default] => Show_Page
+                                            [auth] => Login
+                                            [not_found] => Show_Page
+                                            [rm_parameter] => rm
+                                        )
+
+                                )
+
+                            [global_prefix] => core.
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] =>  gd_module
+                            [1] => 1
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\Application.php
+                    [line] => 87
+                    [function] => init
+                    [class] => Config_Resource_New
+                    [object] => Config_Resource_New Object
+                        (
+                            [config_filename] => runmodes
+                            [class_name] => News_Manager
+                            [method_name] => news_entry
+                            [access_groups] => Array
+                                (
+                                    [0] => admin
+                                )
+
+                            [runmode_name] => News_Manager_Entry
+                            [runmode_path] => runmodes/Admin/CMS/Page_Runmode
+                            [rm_parameter] => rm
+                            [rm_default] => Show_Page
+                            [rm_auth] => Login
+                            [rm_not_found] => Show_Page
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\core\Application.php
+                    [line] => 29
+                    [function] => init_module
+                    [class] => Application
+                    [object] => Application Object
+                        (
+                            [application_conf] => Array
+                                (
+                                    [logger] => Array
+                                        (
+                                            [class] => Logger
+                                            [global] => log
+                                            [path] => Logger
+                                            [store] => logs
+                                            [accept] => test
+                                            [flush] => n
+                                            [max_size] => 1048576
+                                            [auto] => y
+                                        )
+
+                                    [cache] => Array
+                                        (
+                                            [class] => FileCache
+                                            [global] => cache
+                                            [path] => Cache
+                                            [auto] => y
+                                        )
+
+                                    [pear_callback_module] => Array
+                                        (
+                                            [class] => PEAR_Callback
+                                            [global] => pear_callback
+                                            [auto] => y
+                                        )
+
+                                    [ajax_module] => Array
+                                        (
+                                            [class] => Ajax_Cover
+                                            [global] => ajax
+                                            [path] => Ajax
+                                            [auto] => n
+                                        )
+
+                                    [smarty_module] => Array
+                                        (
+                                            [class] => Smarty_cover
+                                            [global] => smarty
+                                            [path] => Smarty
+                                            [auto] => y
+                                        )
+
+                                    [database_module] => Array
+                                        (
+                                            [class] => Abstract_SQL_Query
+                                            [names] => utf8
+                                            [global] => sql
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [store_module] => Array
+                                        (
+                                            [class] => DB_Store
+                                            [global] => store
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [session_module] => Array
+                                        (
+                                            [class] => Session
+                                            [global] => session
+                                            [path] => Session
+                                            [auto] => y
+                                        )
+
+                                    [auth_module] => Array
+                                        (
+                                            [class] => Authoriser_New
+                                            [global] => auth
+                                            [path] => User
+                                            [auto] => y
+                                            [login_field] => login
+                                            [password_field] => password
+                                        )
+
+                                    [validator_module] => Array
+                                        (
+                                            [class] => Validator
+                                            [global] => validator
+                                            [path] => Validator
+                                            [auto] => n
+                                        )
+
+                                    [gd_module] => Array
+                                        (
+                                            [class] => Image
+                                            [global] => image
+                                            [path] => Image
+                                            [auto] => n
+                                        )
+
+                                    [list] => Array
+                                        (
+                                            [class] => SList
+                                            [global] => list
+                                            [path] => List
+                                            [auto] => n
+                                        )
+
+                                    [tree] => Array
+                                        (
+                                            [class] => Tree
+                                            [global] => tree
+                                            [path] => Tree
+                                            [auto] => y
+                                        )
+
+                                    [tree_data] => Array
+                                        (
+                                            [class] => Tree_Data_Manager
+                                            [global] => tree_data
+                                            [path] => Tree
+                                            [auto] => n
+                                        )
+
+                                    [mailer_module] => Array
+                                        (
+                                            [class] => Mailer
+                                            [global] => mail
+                                            [path] => Mail
+                                            [auto] => n
+                                        )
+
+                                    [xml] => Array
+                                        (
+                                            [class] => Parser_Xml_Array
+                                            [global] => xml
+                                            [path] => XML
+                                            [auto] => n
+                                        )
+
+                                    [runmode_module] => Array
+                                        (
+                                            [class] => Config_Resource_New
+                                            [global] => runmode
+                                            [path] => Runmode
+                                            [auto] => y
+                                            [default] => Show_Page
+                                            [auth] => Login
+                                            [not_found] => Show_Page
+                                            [rm_parameter] => rm
+                                        )
+
+                                )
+
+                            [global_prefix] => core.
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                            [0] => runmode_module
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [file] => Z:\home\109.123.173.31\www\anahata\index.php
+                    [line] => 31
+                    [function] => run
+                    [class] => Application
+                    [object] => Application Object
+                        (
+                            [application_conf] => Array
+                                (
+                                    [logger] => Array
+                                        (
+                                            [class] => Logger
+                                            [global] => log
+                                            [path] => Logger
+                                            [store] => logs
+                                            [accept] => test
+                                            [flush] => n
+                                            [max_size] => 1048576
+                                            [auto] => y
+                                        )
+
+                                    [cache] => Array
+                                        (
+                                            [class] => FileCache
+                                            [global] => cache
+                                            [path] => Cache
+                                            [auto] => y
+                                        )
+
+                                    [pear_callback_module] => Array
+                                        (
+                                            [class] => PEAR_Callback
+                                            [global] => pear_callback
+                                            [auto] => y
+                                        )
+
+                                    [ajax_module] => Array
+                                        (
+                                            [class] => Ajax_Cover
+                                            [global] => ajax
+                                            [path] => Ajax
+                                            [auto] => n
+                                        )
+
+                                    [smarty_module] => Array
+                                        (
+                                            [class] => Smarty_cover
+                                            [global] => smarty
+                                            [path] => Smarty
+                                            [auto] => y
+                                        )
+
+                                    [database_module] => Array
+                                        (
+                                            [class] => Abstract_SQL_Query
+                                            [names] => utf8
+                                            [global] => sql
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [store_module] => Array
+                                        (
+                                            [class] => DB_Store
+                                            [global] => store
+                                            [path] => Database
+                                            [auto] => y
+                                        )
+
+                                    [session_module] => Array
+                                        (
+                                            [class] => Session
+                                            [global] => session
+                                            [path] => Session
+                                            [auto] => y
+                                        )
+
+                                    [auth_module] => Array
+                                        (
+                                            [class] => Authoriser_New
+                                            [global] => auth
+                                            [path] => User
+                                            [auto] => y
+                                            [login_field] => login
+                                            [password_field] => password
+                                        )
+
+                                    [validator_module] => Array
+                                        (
+                                            [class] => Validator
+                                            [global] => validator
+                                            [path] => Validator
+                                            [auto] => n
+                                        )
+
+                                    [gd_module] => Array
+                                        (
+                                            [class] => Image
+                                            [global] => image
+                                            [path] => Image
+                                            [auto] => n
+                                        )
+
+                                    [list] => Array
+                                        (
+                                            [class] => SList
+                                            [global] => list
+                                            [path] => List
+                                            [auto] => n
+                                        )
+
+                                    [tree] => Array
+                                        (
+                                            [class] => Tree
+                                            [global] => tree
+                                            [path] => Tree
+                                            [auto] => y
+                                        )
+
+                                    [tree_data] => Array
+                                        (
+                                            [class] => Tree_Data_Manager
+                                            [global] => tree_data
+                                            [path] => Tree
+                                            [auto] => n
+                                        )
+
+                                    [mailer_module] => Array
+                                        (
+                                            [class] => Mailer
+                                            [global] => mail
+                                            [path] => Mail
+                                            [auto] => n
+                                        )
+
+                                    [xml] => Array
+                                        (
+                                            [class] => Parser_Xml_Array
+                                            [global] => xml
+                                            [path] => XML
+                                            [auto] => n
+                                        )
+
+                                    [runmode_module] => Array
+                                        (
+                                            [class] => Config_Resource_New
+                                            [global] => runmode
+                                            [path] => Runmode
+                                            [auto] => y
+                                            [default] => Show_Page
+                                            [auth] => Login
+                                            [not_found] => Show_Page
+                                            [rm_parameter] => rm
+                                        )
+
+                                )
+
+                            [global_prefix] => core.
+                        )
+
+                    [type] => ->
+                    [args] => Array
+                        (
+                        )
+
+                )
+
+        )
+
+    [callback] => Array
+        (
+            [0] => PEAR_Callback Object
+                (
+                )
+
+            [1] => handle
+        )
+
+)

@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{#js_url#}jscalendar/calendar-win2k-1.css" />
 <h2>Новости ленты "{$news_data.name}"</h2>
 <div class="NewButton"><a href="{#script_url#}{seo_url rm="News_Manager"}">&larr; Назад</a></div><br />
-<form action="{#script_url#}{seo_url param1=$news_data.id param2 = $num_pages.current}" method="post" name="frm">
+<form action="{#script_url#}{seo_url param1=$news_data.id param2 = $num_pages.current}" method="post" name="frm" enctype="multipart/form-data">
     <fieldset name="information" id="information">
       <legend>{if $news_to_edit}Редактировать{else}Создать{/if} новость</legend>
 	<table>
@@ -41,14 +41,12 @@
 			<input type="text" readonly name="adddate" id="date_field_adddate" {if $news_to_edit.adddate}value="{$news_to_edit.adddate}"{else} value="{$smarty.now|date_format:'%Y-%m-%d'}"{/if} /><img src="{#js_url#}jscalendar/jscalendar.gif" id="trig_adddate" />
 			</td>
 		</tr>
-		<tr>
-			<td align="right">
-			Время:
-			</td>
+                <tr>
+			<td align="right">Изображение:</td>
 			<td align="left">
-			{html_select_time use_24_hours=true time=$news_to_edit.addtime display_seconds=false}
-
+				<input type="file" name="file"/>
 			</td>
+                        {if $news_to_edit.image}<img src="{#upload#}200_{$news_to_edit.image}" alt="Изображение"/>{/if}
 		</tr>
 		<tr>
 			<td align="right" valign="top">
@@ -91,7 +89,8 @@
 			<a title="Не опубликовывать" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3='unpublish' param4=$item.id}" onclick="return confirm('Вы уверены?');"><img border="none" src="{#admin_img_url#}folder_delete.png" alt="Не опубликовывать" /></a>
 			{elseif $item.publish == 0}
 			<a title="Опубликовать" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3='publish' param4=$item.id}" onclick="return confirm('Вы уверены?');"><img border="none" src="{#admin_img_url#}save.gif" alt="Опубликовать" /></a>
-			{/if}		</td>
+			{/if}
+                </td>
 	</tr>
 	{/foreach}
 <tfoot>
@@ -116,6 +115,7 @@
 {literal}
 tinyMCE.init({
 		// General options
+                language : "ru",
 		mode : "exact",
 		elements: "shortid, fullid",
 		theme : "advanced",
