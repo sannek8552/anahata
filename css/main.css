@@ -214,5 +214,14 @@ input[type=text], input[type=password] {width: 300px;}
 #news .news_logo {float: left; margin: 0 10px 10px 0;}
 
 #news .social {float: right;}
+#news .detail {text-align: right; padding-right: 50px;}
 
 #vk_comments {margin-top: 20px;}
+
+
+#preps .date {color: #575957; padding-right: 10px;}
+#preps .item {padding-bottom: 10px; margin-bottom: 15px; border-bottom: 1px dotted #348318;}
+#preps .news_logo {float: left; margin: 0 10px 10px 0;}
+
+#preps .social {float: right;}
+#preps .detail {text-align: right; padding-right: 50px;}

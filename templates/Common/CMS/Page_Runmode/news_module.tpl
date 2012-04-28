@@ -12,9 +12,10 @@
         <div>
             <a href="{#script_url#}{seo_url rm=$seo_url param1 = $hid_current}">Назад к списку</a>
         </div>
+        <div class="clear"></div>
         <div id="vk_comments"></div>
         <script type="text/javascript">
-            {literal}VK.Widgets.Comments("vk_comments", {limit: 10, width: "650", attach: "*"});{/literal}
+            {literal}VK.Widgets.Comments("vk_comments", {limit: 10, width: "600", attach: "*"});{/literal}
         </script>
     </div>
 
@@ -50,9 +51,13 @@
                 </script>
             </div>
             <div class="text">
-                {$item.short}
+                <div class="short_text">
+                    {$item.short}
+                </div>
                 {if $item.full}
+                <div class="detail">
                     <a href="{#script_url#}{seo_url rm=$seo_url param1 = $num_pages.current param2 = 'full_article' param3=$item.id}">Подробнее...</a>
+                </div>
                 {/if}
                 
             </div>

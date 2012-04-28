@@ -14,6 +14,9 @@ class Photogallery extends Runmode
 		//$this->items_per_page = 9;
 		
 		parent::Runmode();
+
+                $seo_data['page_title'] = 'Фотогалерея';
+                $GLOBALS['core.smarty']->assign('seo_data', $seo_data);
 	}
 	
 	function process()
