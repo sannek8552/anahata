@@ -9,10 +9,6 @@ class Photogallery extends Runmode
 		$this->base_map[0] = 'gallery_id';
                 $this->base_map[1] = 'page';
 		
-		//$sh = new SettingsHolder();
-		//$settings = $sh->getSettings();
-		//$this->items_per_page = 9;
-		
 		parent::Runmode();
 
                 $seo_data['page_title'] = 'Фотогалерея';

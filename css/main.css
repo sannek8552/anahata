@@ -16,6 +16,9 @@ body {
 }
 
 body.mceContentBody  {background: none;}
+html  {padding: 5px;}
+
+.nop { padding: 0;}
 
 p {margin: 0 0 14px 0; padding: 0;}
 

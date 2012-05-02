@@ -11,7 +11,7 @@
                 {literal}
 
                 document.write(VK.Share.button({
-                  url: '{/literal}{#domain_name#}{#script_url#}{seo_url}',
+                  url: '{/literal}{#domain_name#}{#script_url#}{seo_url rm=$seo_data.seo_url}',
                   title: '{$item.fio|escape}',
                   description: 'Преподаватель школы йоги Анахата',
                   image: '{#domain_name#}{#upload#}thumb_{$item.photo}{literal}',

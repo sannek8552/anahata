@@ -1,11 +1,11 @@
-<?php /* Smarty version 2.6.18, created on 2012-04-27 12:51:07
+<?php /* Smarty version 2.6.18, created on 2012-05-02 15:40:29
          compiled from common_header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'config_load', 'common_header.tpl', 1, false),array('function', 'seo_url', 'common_header.tpl', 73, false),)), $this); ?>
 <?php echo smarty_function_config_load(array('file' => "templates.ini",'section' => 'common','scope' => 'global'), $this);?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" class="nop">
 <head>
 <link rel="image_src" href="<?php echo $this->_config[0]['vars']['domain_name']; ?>
 <?php echo $this->_config[0]['vars']['img_url']; ?>
@@ -101,21 +101,18 @@ test_banner.png" alt=""/>
         </div>
         <div id="menu">
             <ul>
-                <li><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
-<?php echo smarty_function_seo_url(array('rm' => 'index'), $this);?>
-">Главная</a></li>
-                <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == 'О нас'): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
-<?php echo smarty_function_seo_url(array('rm' => 'About'), $this);?>
-">О нас</a></li>
-                <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == 'Расписание'): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
-<?php echo smarty_function_seo_url(array('rm' => 'schedule'), $this);?>
-">Расписание</a></li>
-                <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == 'Фотогалерея'): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
-<?php echo smarty_function_seo_url(array('rm' => 'Photogallery'), $this);?>
-">Фотогалерея</a></li>
-                <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == 'Преподаватели'): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
-<?php echo smarty_function_seo_url(array('rm' => 'Preps'), $this);?>
-">Преподаватели</a></li>
+                <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == $this->_tpl_vars['html_home_page']['title']): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
+<?php echo smarty_function_seo_url(array('rm' => $this->_tpl_vars['html_home_page']['seo_url']), $this);?>
+"><?php echo $this->_tpl_vars['html_home_page']['title']; ?>
+</a></li>
+                <?php $_from = $this->_tpl_vars['html_menus']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }if (count($_from)):
+    foreach ($_from as $this->_tpl_vars['item']):
+?>
+                <li <?php if ($this->_tpl_vars['seo_data']['page_title'] == $this->_tpl_vars['item']['title']): ?>class="active"<?php endif; ?>><a href="<?php echo $this->_config[0]['vars']['script_url']; ?>
+<?php echo smarty_function_seo_url(array('rm' => $this->_tpl_vars['item']['seo_url']), $this);?>
+"><?php echo $this->_tpl_vars['item']['title']; ?>
+</a></li>
+                <?php endforeach; endif; unset($_from); ?>
             </ul>
 
         </div>

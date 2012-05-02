@@ -1,7 +1,7 @@
 {config_load file=templates.ini section="common" scope="global"}
 <form  method="post" name="form">
 <fieldset name="information" id="information">
-      <legend>Page Structure Information</legend>
+      <legend>Информация о странице</legend>
 <table border="0" cellspacing="1" cellpadding="5">
   <tr>
     <td valign="top"><strong>Название:</strong></td>
@@ -80,7 +80,7 @@
 </table>
 </fieldset>
 <fieldset name="information" id="information">
-      <legend>Page Content - HTML Editor</legend>
+      <legend>Содержание страницы</legend>
           <textarea rows="50" style="height:500px; width: 500px;" name="simple_module_content" id="simple_module_contentid">{$attribute_row.content}</textarea><br/>
           <table>
           <tr>

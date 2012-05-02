@@ -1,6 +1,6 @@
 {config_load file=templates.ini section="common" scope="global"}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" class="nop">
 <head>
 <link rel="image_src" href="{#domain_name#}{#img_url#}logo.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -70,11 +70,10 @@
         </div>
         <div id="menu">
             <ul>
-                <li><a href="{#script_url#}{seo_url rm='index'}">Главная</a></li>
-                <li {if $seo_data.page_title == 'О нас'}class="active"{/if}><a href="{#script_url#}{seo_url rm='About'}">О нас</a></li>
-                <li {if $seo_data.page_title == 'Расписание'}class="active"{/if}><a href="{#script_url#}{seo_url rm='schedule'}">Расписание</a></li>
-                <li {if $seo_data.page_title == 'Фотогалерея'}class="active"{/if}><a href="{#script_url#}{seo_url rm='Photogallery'}">Фотогалерея</a></li>
-                <li {if $seo_data.page_title == 'Преподаватели'}class="active"{/if}><a href="{#script_url#}{seo_url rm='Preps'}">Преподаватели</a></li>
+                <li {if $seo_data.page_title == $html_home_page.title}class="active"{/if}><a href="{#script_url#}{seo_url rm=$html_home_page.seo_url}">{$html_home_page.title}</a></li>
+                {foreach from = $html_menus item = item}
+                <li {if $seo_data.page_title == $item.title}class="active"{/if}><a href="{#script_url#}{seo_url rm=$item.seo_url}">{$item.title}</a></li>
+                {/foreach}
             </ul>
 
         </div>

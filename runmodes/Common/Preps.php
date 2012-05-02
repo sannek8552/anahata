@@ -8,8 +8,8 @@ class Preps extends Runmode
 	{
 
 		parent::Runmode();
-                $seo_data['page_title'] = 'Преподаватели';
-                $GLOBALS['core.smarty']->assign('seo_data', $seo_data);
+                //$seo_data['page_title'] = 'Преподаватели';
+                //$GLOBALS['core.smarty']->assign('seo_data', $seo_data);
 	}
 	
 	function process()
@@ -20,7 +20,8 @@ class Preps extends Runmode
 
                 $GLOBALS['core.smarty']->assign('preps', $preps);
 
-                return Common_Header::out('Common/preps');
+                return $GLOBALS['core.smarty']->fetch('Common/preps.tpl');
+                //return Common_Header::out('Common/preps');
 		
 	}
 }
