@@ -6,6 +6,7 @@
 	<script type="text/javascript" src="../../utils/mctabs.js"></script>
 	<script type="text/javascript" src="../../utils/form_utils.js"></script>
 	<script type="text/javascript" src="js/image.js"></script>
+        
 </head>
 <body id="image" style="display: none">
 <form onsubmit="ImageDialog.update();return false;" action="#">
@@ -25,7 +26,9 @@
                   <td><input id="src" name="src" type="text" class="mceFocus" value="" style="width: 200px" onchange="ImageDialog.getImageData();" /></td>
                   <td id="srcbrowsercontainer">&nbsp;</td>
                 </tr>
-              </table></td>
+              </table>
+                <button id="uploadimage">Загрузить</button>
+            </td>
           </tr>
 		  <tr>
 			<td><label for="image_list">{#advanced_dlg.image_list}</label></td>

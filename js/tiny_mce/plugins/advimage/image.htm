@@ -7,10 +7,39 @@
 	<script type="text/javascript" src="../../utils/form_utils.js"></script>
 	<script type="text/javascript" src="../../utils/validate.js"></script>
 	<script type="text/javascript" src="../../utils/editable_selects.js"></script>
+        <script type="text/javascript" src="../../../jquery-1.7.min.js"></script>
+        <script type="text/javascript" src="../../../ajaxupload.3.5.js"></script>
+        <script type="text/javascript">
+            function onLoad() {
+
+                    var btnUpload=$('#uploadimage');
+
+                    new AjaxUpload(btnUpload, {
+                            action: '/anahata/index.php?rm=ajax_upload',
+                            name: 'file',
+                            responseType : 'json',
+                            onSubmit: function(file, ext){
+                                     if (! (ext && /^(jpg|png|jpeg|gif)$/.test(ext))){
+                                            //status.text('Only JPG, PNG or GIF files are allowed');
+                                            return false;
+                                    }
+
+                            },
+                            onComplete: function(file, res){
+                                    if(res.success){
+                                        $('#src').val(res.filename);
+                                        ImageDialog.showPreviewImage(res.filename, 1);
+                                    }
+                            }
+                    });
+
+            }
+        </script>
 	<script type="text/javascript" src="js/image.js"></script>
+        
 	<link href="css/advimage.css" rel="stylesheet" type="text/css" />
 </head>
-<body id="advimage" style="display: none">
+    <body id="advimage" style="display: none" onload="onLoad();">
     <form onsubmit="ImageDialog.insert();return false;" action="#"> 
 		<div class="tabs">
 			<ul>
@@ -33,7 +62,9 @@
 									  <td><input name="src" type="text" id="src" value="" class="mceFocus" onchange="ImageDialog.showPreviewImage(this.value);" /></td> 
 									  <td id="srcbrowsercontainer">&nbsp;</td>
 									</tr>
-								  </table></td>
+								  </table>
+                                                                  <a href="javascript:void(0);" id="uploadimage" onclick="">Загрузить</a>
+                                                                </td>
 							</tr>
 							<tr>
 								<td><label for="src_list">{#advimage_dlg.image_list}</label></td>
