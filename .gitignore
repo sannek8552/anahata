@@ -8,4 +8,5 @@ templates/templates_c/
 conf/templates.ini
 conf/db_config.ini
 .htaccess
+cache
 
