@@ -4,7 +4,7 @@ README.txt
 demos/
 extras/documentation
 nbproject/
-templates/templates_c/
+templates/templates_c
 conf/templates.ini
 conf/db_config.ini
 .htaccess
