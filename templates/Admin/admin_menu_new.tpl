@@ -152,9 +152,9 @@ tinyMCE.init({
 		{/literal}content_css : "{#css_url#}main.css",{literal}
 		theme_advanced_resizing : true,
 		{/literal}
-        remove_script_host : true,
-        document_base_url : "{#domain_name#}{#script_url#}",
-        {literal}
+                remove_script_host : true,
+                document_base_url : "{#domain_name#}{#script_url#}",
+                {literal}
 
 		// Example word content CSS (should be your site CSS) this one removes paragraph margins
 		//content_css : "css/main.css",

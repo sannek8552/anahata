@@ -28,7 +28,7 @@ class Photogallery extends Runmode
                     $ph->get_page($page, true);
 
 
-                    return Common_Header::out('Common/CMS/Page_Runmode/gallery_one_module');
+                    return $GLOBALS['core.smarty']->fetch('Common/CMS/Page_Runmode/gallery_one_module.tpl');
 
                 } else {
                     $gh = new Gallery_One_Holder();
@@ -36,7 +36,7 @@ class Photogallery extends Runmode
 
                     $GLOBALS['core.smarty']->assign('galleries', $galleries);
 
-                    return Common_Header::out('Common/photogallery');
+                    return $GLOBALS['core.smarty']->fetch('Common/photogallery.tpl');
                 }
 		
 	}
