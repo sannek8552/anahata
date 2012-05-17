@@ -9,4 +9,7 @@ conf/templates.ini
 conf/db_config.ini
 .htaccess
 cache/
+upload/
+file_storage/
+gallery/
 
