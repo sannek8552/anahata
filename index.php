@@ -1,8 +1,9 @@
 <?php
-@date_default_timezone_set(@date_default_timezone_get());
+$timezone = parse_ini_file('conf/timezone.ini',true);
+if (isset($timezone['common']['timezone']) && !empty($timezone['common']['timezone'])) @date_default_timezone_set($timezone['common']['timezone']);
+else @date_default_timezone_set(@date_default_timezone_get());
 error_reporting(E_ALL);
 $GLOBALS['time_start'] = microtime(true);
-require_once 'classes/FirePHPCore/fb.php';
 
 if(isset($_REQUEST['params_to_parse']) && !empty($_REQUEST['params_to_parse']))
 {
@@ -22,13 +23,17 @@ else
 	$_REQUEST['params_to_pars'] = array();
 }
 
-if (isset($_REQUEST['user_id']) && !empty($_REQUEST['user_id'])) $_SESSION['referral_id'] = $_REQUEST['user_id'];
-
-ini_set('include_path','./;./core;./internal;./modules;./classes;' . ini_get('include_path'));
+ini_set('include_path','./'.PATH_SEPARATOR.'./core'.PATH_SEPARATOR.'./internal'.PATH_SEPARATOR.'./modules'.PATH_SEPARATOR.'./classes'.PATH_SEPARATOR.'./runmodes/Common'.PATH_SEPARATOR.'./components/modules' . PATH_SEPARATOR .'' . ini_get('include_path'));
 require_once 'Application.php';
-
-$app = new Application();
-$res = $app->run();
+try 
+{
+	$app = new Application();
+	$res = $app->run();
+}
+catch (Exception $e)
+{
+	//code to log email print here
+}
 if (isset($_SERVER['HTTP_REFERER']) and !isset($_SESSION['HTTP_REFERER'])) $_SESSION['HTTP_REFERER'] = $_SERVER['HTTP_REFERER'];
 session_write_close();
 $GLOBALS['core.log']->do_log('memory max ' . number_format(memory_get_peak_usage(), 0, '.', ','), 'application');
