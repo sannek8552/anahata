@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Панель администратора : Модный ребенок</title>
+<title>Панель администратора : Анахата</title>
 
 <script type="text/javascript">
   var ajax_prefix = '{#ajax_prefix#}';
@@ -75,7 +75,7 @@ function populate_seo(auto)
   <div id="header_right">
   <a href="{#script_url#}{seo_url rm=" target="_blank"index"}">Посмотреть сайт</a> |
   <a href="{#script_url#}{seo_url rm="Logout"}">Выйти &gt;</a> </div>
-  <h1>Панель администратора "Модный ребенок"</h1>
+  <h1>Панель администратора "Анахата"</h1>
 
 	</div> 
 	<div id="container">

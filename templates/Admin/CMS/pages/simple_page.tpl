@@ -105,13 +105,14 @@
 <br />
 
 </fieldset>
-<fieldset name="information" id="information"  style="display: none;">
-<legend>Last revisions</legend>
+<fieldset name="information" id="information">
+<legend>Ревизии</legend>
 <div id="revisions"></div>
 </fieldset>
 <br />
  {if $new_interface}
-<input type="checkbox" name="no_need" style="width:auto; display: none;" id="keep_open"/>
+ Не закрывать
+<input type="checkbox" name="no_need" style="width:auto;" id="keep_open"/> 
 <input id="save"type="button" name="next_step" value="Сохранить" class="submit-button" onclick="check_errors();"  />
 <input type="button" name="preview" value="Предварительный просмотр" class="submit-button" onclick="page_creator.preview(false);"/>
 <input type="button" name="cancel" value="Отмена" class="submit-button" onclick="page_creator.cancel();" />

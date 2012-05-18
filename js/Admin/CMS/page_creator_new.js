@@ -492,13 +492,16 @@ Page_Creator = function()
                                             {
                                                 var rev_text = '';
                                                 var revisions = params[i];
-                                                for(var j = 0; j < revisions.length; j++)
-                                                {
-                                                    //alert(revisions[j]);
-                                                    rev_text += '<div class="rev_item"><a href="javascript:void(0)" onclick="page_creator.loadRevision('+revisions[j]["id"]+')">'+revisions[j]["created"]+' </a></div>'
+                                                if (revisions != undefined) {
+                                                    for(var j = 0; j < revisions.length; j++)
+                                                    {
+                                                        //alert(revisions[j]);
+                                                        rev_text += '<div class="rev_item"><a href="javascript:void(0)" onclick="page_creator.loadRevision('+revisions[j]["id"]+')">'+revisions[j]["created"]+' </a></div>'
+                                                    }
+                                                    $(i).innerHTML = rev_text;
                                                 }
 
-                                                    $(i).innerHTML = rev_text;
+                                                
                                             }
                                             else
                                                 {$(i).value = params[i];}
