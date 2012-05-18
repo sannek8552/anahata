@@ -32,7 +32,7 @@ try
 }
 catch (Exception $e)
 {
-	//code to log email print here
+	echo 'Непредвиденная ошибка...';
 }
 if (isset($_SERVER['HTTP_REFERER']) and !isset($_SESSION['HTTP_REFERER'])) $_SESSION['HTTP_REFERER'] = $_SERVER['HTTP_REFERER'];
 session_write_close();
