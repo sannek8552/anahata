@@ -1,5 +1,5 @@
 <?php
-$timezone = parse_ini_file('conf/timezone.ini',true);
+$timezone = @parse_ini_file('conf/timezone.ini',true);
 if (isset($timezone['common']['timezone']) && !empty($timezone['common']['timezone'])) @date_default_timezone_set($timezone['common']['timezone']);
 else @date_default_timezone_set(@date_default_timezone_get());
 error_reporting(E_ALL);
