@@ -229,3 +229,8 @@ input[type=text], input[type=password] {width: 300px;}
 
 #preps .social {float: right;}
 #preps .detail {text-align: right; padding-right: 50px;}
+
+.table {border-collapse: collapse; border: 1px solid #348318; width: 100%;}
+.table td{padding: 5px; border: 1px solid #348318;}
+
+.table_head {font-weight: bold; background-color: #8ACE3B;}
