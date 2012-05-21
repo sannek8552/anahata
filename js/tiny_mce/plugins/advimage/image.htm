@@ -15,12 +15,12 @@
                     var btnUpload=$('#uploadimage');
 
                     new AjaxUpload(btnUpload, {
-                            action: '/anahata/index.php?rm=ajax_upload',
+                            action: '/index.php?rm=ajax_upload',
                             name: 'file',
                             responseType : 'json',
                             onSubmit: function(file, ext){
                                      if (! (ext && /^(jpg|png|jpeg|gif)$/.test(ext))){
-                                            //status.text('Only JPG, PNG or GIF files are allowed');
+                                            alert('Только изображения');
                                             return false;
                                     }
 
