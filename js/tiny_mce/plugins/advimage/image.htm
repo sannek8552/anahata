@@ -20,7 +20,7 @@
                             responseType : 'json',
                             onSubmit: function(file, ext){
                                      if (! (ext && /^(jpg|png|jpeg|gif)$/.test(ext))){
-                                            alert('Только изображения');
+                                            alert('{#advimage_dlg.only_images#}');
                                             return false;
                                     }
 
