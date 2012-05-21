@@ -17,7 +17,8 @@
         var script_url = '{#script_url#}';
         var images_prefix = '{#img_url#}';
         var ajax_prefix = '{#script_url#}';
-        var common_prefix = '{#common_url#}';        
+        var common_prefix = '{#common_url#}';
+
 </script>
 <script type="text/javascript" src="{#js_url#}validator_o.js"></script>
 

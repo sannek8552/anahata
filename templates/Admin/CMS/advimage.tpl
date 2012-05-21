@@ -1,26 +1,35 @@
+{config_load file=templates.ini section="common" scope="global"}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+{literal}
 <head>
 	<title>{#advimage_dlg.dialog_title}</title>
-	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
-	<script type="text/javascript" src="../../utils/mctabs.js"></script>
-	<script type="text/javascript" src="../../utils/form_utils.js"></script>
-	<script type="text/javascript" src="../../utils/validate.js"></script>
-	<script type="text/javascript" src="../../utils/editable_selects.js"></script>
-        <script type="text/javascript" src="../../../jquery-1.7.min.js"></script>
-        <script type="text/javascript" src="../../../ajaxupload.3.5.js"></script>
+{/literal}
+	<script type="text/javascript" src="{#js_url#}tiny_mce/tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="{#js_url#}tiny_mce/utils/mctabs.js"></script>
+	<script type="text/javascript" src="{#js_url#}tiny_mce/utils/form_utils.js"></script>
+	<script type="text/javascript" src="{#js_url#}tiny_mce/utils/validate.js"></script>
+	<script type="text/javascript" src="{#js_url#}tiny_mce/utils/editable_selects.js"></script>
+        <script type="text/javascript" src="{#js_url#}jquery-1.7.min.js"></script>
+        <script type="text/javascript" src="{#js_url#}ajaxupload.3.5.js"></script>
+        <script type="text/javascript" src="{#js_url#}tiny_mce/plugins/advimage/js/image.js"></script>
+	<link href="{#js_url#}tiny_mce/plugins/advimage/css/advimage.css" rel="stylesheet" type="text/css" />
+
         <script type="text/javascript">
+{literal}
+            //var only_images_text = {#advimage_dlg.general};
+            
             function onLoad() {
 
                     var btnUpload=$('#uploadimage');
 
                     new AjaxUpload(btnUpload, {
-                            action: '/index.php?rm=ajax_upload',
+                            action: '{/literal}{#script_url#}{literal}index.php?rm=ajax_upload',
                             name: 'file',
                             responseType : 'json',
                             onSubmit: function(file, ext){
                                      if (! (ext && /^(jpg|png|jpeg|gif)$/.test(ext))){
-                                            alert('{#advimage_dlg.dialog_title}');
+                                            alert('Only images...');
                                             return false;
                                     }
 
@@ -35,9 +44,7 @@
 
             }
         </script>
-	<script type="text/javascript" src="js/image.js"></script>
-        
-	<link href="css/advimage.css" rel="stylesheet" type="text/css" />
+	
 </head>
     <body id="advimage" style="display: none" onload="onLoad();">
     <form onsubmit="ImageDialog.insert();return false;" action="#"> 
@@ -63,7 +70,7 @@
 									  <td id="srcbrowsercontainer">&nbsp;</td>
 									</tr>
 								  </table>
-                                                                  <a href="javascript:void(0);" id="uploadimage" onclick="">{#advimage_dlg.dialog_title}</a>
+                                                                  <a href="javascript:void(0);" id="uploadimage" onclick="">{#advimage_dlg.only_images}</a>
                                                                 </td>
 							</tr>
 							<tr>
@@ -108,7 +115,7 @@
 							</td>
 							<td rowspan="6" valign="top">
 								<div class="alignPreview">
-									<img id="alignSampleImg" src="img/sample.gif" alt="{#advimage_dlg.example_img}" />
+									<img id="alignSampleImg" src="{/literal}{#js_url#}{literal}tinymce/plugins/advimage/img/sample.gif" alt="{#advimage_dlg.example_img}" />
 									Lorem ipsum, Dolor sit amet, consectetuer adipiscing loreum ipsum edipiscing elit, sed diam
 									nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Loreum ipsum
 									edipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
@@ -266,3 +273,4 @@
     </form>
 </body> 
 </html> 
+{/literal}

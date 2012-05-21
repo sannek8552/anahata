@@ -12,6 +12,7 @@
   var images_prefix = '{#admin_img_url#}';
   var script_url = '{#script_url#}';
   var img_url = '{#img_url#}';
+
 </script>
 
 <link href="{#css_url#}admin.css" rel="stylesheet" type="text/css" />
