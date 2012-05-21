@@ -70,7 +70,7 @@
 									  <td id="srcbrowsercontainer">&nbsp;</td>
 									</tr>
 								  </table>
-                                                                  <a href="javascript:void(0);" id="uploadimage" onclick="">{#advimage_dlg.only_images}</a>
+                                                                  <a href="javascript:void(0);" id="uploadimage" onclick="">Upload</a>
                                                                 </td>
 							</tr>
 							<tr>
