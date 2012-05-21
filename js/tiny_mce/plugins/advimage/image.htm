@@ -20,7 +20,7 @@
                             responseType : 'json',
                             onSubmit: function(file, ext){
                                      if (! (ext && /^(jpg|png|jpeg|gif)$/.test(ext))){
-                                            alert('{#advimage_dlg.only_images#}');
+                                            alert('{#advimage_dlg.dialog_title}');
                                             return false;
                                     }
 
@@ -63,7 +63,7 @@
 									  <td id="srcbrowsercontainer">&nbsp;</td>
 									</tr>
 								  </table>
-                                                                  <a href="javascript:void(0);" id="uploadimage" onclick="">Загрузить</a>
+                                                                  <a href="javascript:void(0);" id="uploadimage" onclick="">{#advimage_dlg.only_images}</a>
                                                                 </td>
 							</tr>
 							<tr>
