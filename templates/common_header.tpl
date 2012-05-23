@@ -53,6 +53,10 @@
                     contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
             });
 
+
+            var banner_number = Math.floor(Math.random() * 6) + 1;
+            $("#header .banner img").attr('src', '{/literal}{#img_url#}{literal}banner'+banner_number+'.png');
+            //alert(banner_number);
             
         });
         
@@ -71,7 +75,7 @@
         <div id="header">
             <a href="{#script_url#}index.html" class="logo" title="Анахата :: Главная"></a>
             <div class="banner">
-                <img src="{#img_url#}test_banner.png" alt=""/>
+                <img src="" alt=""/>
             </div>
             <div class="clear"></div>
 
