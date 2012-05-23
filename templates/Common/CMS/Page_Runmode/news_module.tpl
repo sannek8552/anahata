@@ -41,7 +41,7 @@
                       title: '{$item.name|escape}',
                       description: '{$item.name|escape}',
                       image:'{#domain_name#}{#upload#}200_{$item.image}{literal}',
-                      noparse: true
+                      noparse: false
                     }, {
                       type: 'custom',
                       text: '<img style="vertical-align: middle;border:0;" src="https://vk.com/images/vk16.png" title="Опубликовать Вконтакте">'
