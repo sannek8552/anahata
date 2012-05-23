@@ -40,7 +40,7 @@
                       url: '{/literal}{#domain_name#}{#script_url#}{seo_url rm=$seo_url param1 = $num_pages.current param2 = "full_article" param3=$item.id}',
                       title: '{$item.name|escape}',
                       description: '{$item.name|escape}',
-                      image:'{#domain_name#}{#upload#}200_{$item.image}{literal}',
+                      //image:'{#domain_name#}{#upload#}200_{$item.image}{literal}',
                       noparse: false
                     }, {
                       type: 'custom',
