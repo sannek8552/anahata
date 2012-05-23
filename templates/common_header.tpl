@@ -14,6 +14,7 @@
 <link href="{#css_url#}menu.css?1=2" rel="stylesheet" type="text/css" />
 <link  href="{#css_url#}slimbox.css" rel="stylesheet" type="text/css" media="screen" />
 <link  href="{#css_url#}jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css"/>
+<link rel="image_src" href="{#img_url#}logo.png" />
 <script type="text/javascript">
         var script_url = '{#script_url#}';
         var images_prefix = '{#img_url#}';
