@@ -42,11 +42,19 @@
 			</td>
 		</tr>
                 <tr>
-			<td align="right">Изображение:</td>
-			<td align="left">
-				<input type="file" name="file"/>
+			<td align="right" valign="top">Сортировка:</td>
+                        <td align="left" >
+				<input type="text" name="order_id" value="{$news_to_edit.order_id}"/>
 			</td>
-                        {if $news_to_edit.image}<img src="{#upload#}200_{$news_to_edit.image}" alt="Изображение"/>{/if}
+
+		</tr>
+                <tr>
+			<td align="right" valign="top">Изображение:</td>
+                        <td align="left" >
+				<input type="file" name="file" style="vertical-align: top;"/>
+                                {if $news_to_edit.image}<img src="{#upload#}200_{$news_to_edit.image}" alt="Изображение"/>{/if}
+			</td>
+                        
 		</tr>
 		<tr>
 			<td align="right" valign="top">
@@ -62,37 +70,36 @@
 </form>
 <div class="table-list">
 <table>
-  <thead>
+    <thead>
         <tr>
-          <th scope="col" nowrap="nowrap">№</th>
-          <th scope="col" nowrap="nowrap">Название</th>
-          <th scope="col" nowrap="nowrap">Короткая часть</th>
-          <th scope="col" nowrap="nowrap">Дата</th>
-          <th scope="col" nowrap="nowrap">Функции</th>
-      </thead>
-	{foreach from = $all_news item = item key = key}
-	<tr>
-		<td valign="top">
-		{$key+1}		</td>
-	  <td valign="top">
-		{$item.name}		</td>
-	  <td valign="top" >
-		{$item.short}
-		</td>
-		<td valign="top" >
-		{$item.adddate|date_format:"%d-%m-%Y"} {$item.addtime|date_format:"%H:%M"}
-		</td>
-		<td valign="top">
-			<a title="Редактировать" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3="edit" param4=$item.id}"><img border="none" src="{#admin_img_url#}edit.png" alt="Редактировать" /></a>
-			<a title="Удалить" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3="delete" param4=$item.id}" onclick="return confirm('Are you sure?');"><img border="none" src="{#admin_img_url#}cross.png" alt="Удалить" /></a>
-			{if $item.publish == 1}
-			<a title="Не опубликовывать" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3='unpublish' param4=$item.id}" onclick="return confirm('Вы уверены?');"><img border="none" src="{#admin_img_url#}folder_delete.png" alt="Не опубликовывать" /></a>
-			{elseif $item.publish == 0}
-			<a title="Опубликовать" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3='publish' param4=$item.id}" onclick="return confirm('Вы уверены?');"><img border="none" src="{#admin_img_url#}save.gif" alt="Опубликовать" /></a>
-			{/if}
-                </td>
-	</tr>
-	{/foreach}
+            <th scope="col" nowrap="nowrap">№</th>
+            <th scope="col" nowrap="nowrap">Порядок</th>
+            <th scope="col" nowrap="nowrap">Название</th>
+            <th scope="col" nowrap="nowrap">Короткая часть</th>
+            <th scope="col" nowrap="nowrap">Дата</th>
+            <th scope="col" nowrap="nowrap">Функции</th>
+        </tr>
+    </thead>
+    {foreach from = $all_news item = item key = key}
+    <tr>
+        <td valign="top">{$key+1}</td>
+        <td valign="top">{$item.order_id}</td>
+        <td valign="top">{$item.name}</td>
+        <td valign="top" >{$item.short}</td>
+        <td valign="top" >
+            {$item.adddate|date_format:"%d-%m-%Y"} {$item.addtime|date_format:"%H:%M"}
+        </td>
+        <td valign="top">
+            <a title="Редактировать" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3="edit" param4=$item.id}"><img border="none" src="{#admin_img_url#}edit.png" alt="Редактировать" /></a>
+            <a title="Удалить" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3="delete" param4=$item.id}" onclick="return confirm('Are you sure?');"><img border="none" src="{#admin_img_url#}cross.png" alt="Удалить" /></a>
+            {if $item.publish == 1}
+            <a title="Не опубликовывать" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3='unpublish' param4=$item.id}" onclick="return confirm('Вы уверены?');"><img border="none" src="{#admin_img_url#}folder_delete.png" alt="Не опубликовывать" /></a>
+            {elseif $item.publish == 0}
+            <a title="Опубликовать" href="{#script_url#}{seo_url param1 = $news_data.id param2 = $num_pages.current param3='publish' param4=$item.id}" onclick="return confirm('Вы уверены?');"><img border="none" src="{#admin_img_url#}save.gif" alt="Опубликовать" /></a>
+            {/if}
+        </td>
+    </tr>
+    {/foreach}
 <tfoot>
 <tr>
 	<td colspan="100">

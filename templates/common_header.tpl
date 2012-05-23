@@ -11,6 +11,7 @@
 <link href="{#img_url#}favico.ico" rel="shortcut icon" type="image/x-icon" />
 
 <link href="{#css_url#}main.css?1=2" rel="stylesheet" type="text/css" />
+<link href="{#css_url#}menu.css?1=2" rel="stylesheet" type="text/css" />
 <link  href="{#css_url#}slimbox.css" rel="stylesheet" type="text/css" media="screen" />
 <link  href="{#css_url#}jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">
@@ -27,6 +28,8 @@
 <script type="text/javascript" src="{#js_url#}jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="{#js_url#}jquery-ui-1.8.16.custom.min.js"></script>
 <script type="text/javascript" src="{#js_url#}jquery.placeholder.min.js"></script>
+
+<script type="text/javascript" src="{#js_url#}menu.js"></script>
 {literal}
 
 <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
@@ -42,16 +45,20 @@
             //init_additional();
             {/literal}{$text_to_init}{literal}
 
-            /*$('#search_form').bind('submit', function(){
-                var url = '{/literal}{#script_url#}{literal}Search/';
-                url += $("#search_form input[name='search']").val() + '.html';
-                $('#search_form').attr('action', url);
-            });*/
+            menu.init({
+                    mainmenuid: "menu", //menu DIV id
+                    orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+                    classname: 'menu', //class added to menu's outer DIV
+                    //customtheme: ["#1c5a80", "#18374a"],
+                    contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+            });
 
             
         });
         
     </script>
+
+
 
 
 
@@ -69,11 +76,15 @@
             <div class="clear"></div>
 
         </div>
-        <div id="menu">
+        <div id="menu" class="menu">
             <ul>
                 <li {if $seo_data.page_title == $html_home_page.title}class="active"{/if}><a href="{#script_url#}{seo_url rm=$html_home_page.seo_url}">{$html_home_page.title}</a></li>
                 {foreach from = $html_menus item = item}
-                <li {if $seo_data.page_title == $item.title}class="active"{/if}><a href="{#script_url#}{seo_url rm=$item.seo_url}">{$item.title}</a></li>
+                    <li {if $seo_data.page_title == $item.title}class="active"{/if}><a href="{#script_url#}{seo_url rm=$item.seo_url}">{$item.title}</a>
+                    {if $item.sub}
+                        {include file="sub_menu.tpl" items=$item.sub level=2}
+                    {/if}
+                    </li>
                 {/foreach}
             </ul>
 
@@ -94,7 +105,16 @@
         </div>
         <div id="footer">
             <p>Школа ЙОГИ Анахата г. Томск</p>
-            </div>
+            <br/>
+
+            <a href="http://region70.ru/" target="_blank" title="Сайты Томска"><img src="http://region70.ru/get88x31/" width="88" height="31" border="0"/></a>
+            
+            <a href="http://catalog.metka.ru/" title="[METKA.RU] - томский каталог"><img src="http://catalog.metka.ru/counter/counter.php?id=1337703105&im=7&tp=3" border=0 alt="CATALOG.METKA.RU" width=88 height=31/></a>
+            
+            <span style="margin:0;padding:0" id="tbec"><script type="text/javascript">setTimeout('var tbex=document.createElement("SCRIPT");tbex.type="text/javascript";tbex.src="http://c.tbex.ru/y/4!8831!yoga.tomsk.ru!c.js?rev=2"+String.fromCharCode(38)+"rnd="+(new Date().getTime());(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(tbex)',1)</script></span><noscript><a href="http://tbe.tom.ru/site/yoga.tomsk.ru/"><img src="http://c.tbex.ru/y/4!8831!yoga.tomsk.ru!c.gif" alt="TBE" /></a></noscript>
+
+            <a href="http://pogodavtomske.ru" title="POGODAVTOMSKE.RU - сайт о погоде в г. Томске"><img src="http://pogodavtomske.ru/informer/inf.php?tp=jpg&f=informer88_31_4.jpg" width="88" height="31" alt="POGODAVTOMSKE.RU - сайт о погоде в г. Томске" title="POGODAVTOMSKE.RU - сайт о погоде в г. Томске"/></a>
+        </div>
         
     </div>
 </div>

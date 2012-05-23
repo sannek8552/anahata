@@ -1,0 +1,128 @@
+
+
+
+.menu ul{
+z-index:100;
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+/*Top level list items*/
+.menu ul li{
+position: relative;
+display: inline;
+float: left;
+}
+
+/*Top level menu link items style*/
+.menu ul li a{
+display: block;
+background: #414141; /*background of menu items (default state)*/
+color: white;
+padding: 8px 10px;
+border-right: 1px solid #778;
+color: #2d2b2b;
+text-decoration: none;
+}
+
+* html .menu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+.menu ul li a:link, .menu ul li a:visited{
+color: white;
+}
+
+.menu ul li a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+background: black; 
+color: white;
+}
+
+/*.menu ul li a:hover{
+background: black; 
+color: white;
+}*/
+	
+/*1st sub level menu*/
+.menu ul li ul{
+position: absolute;
+left: 0;
+display: none; /*collapse all sub menus to begin with*/
+visibility: hidden;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.menu ul li ul li{
+display: list-item;
+float: none;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.menu ul li ul li ul{
+top: 0;
+}
+
+/* Sub level menu links style */
+.menu ul li ul li a{
+font: normal 13px Verdana;
+width: 162px; /*width of sub menus*/
+padding: 5px;
+margin: 0;
+border-top-width: 0;
+border-bottom: 1px solid gray;
+}
+
+/* Holly Hack for IE \*/
+* html .menu{height: 1%;} /*Holly Hack for IE7 and below*/
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+top: 15px;
+right: 4px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 6px;
+right: 5px;
+}
+
+/* ######### CSS for shadow added to sub menus  ######### */
+
+.ddshadow{ /*shadow for NON CSS3 capable browsers*/
+position: absolute;
+left: 0;
+top: 0;
+width: 0;
+height: 0;
+background: silver;
+}
+
+.toplevelshadow{ /*shadow opacity for NON CSS3 capable browsers. Doesn't work in IE*/
+opacity: 0.8;
+}
+
+
+
+
+
+#menu {height: 35px; margin: 0 20px;}
+
+#menu li {display: block; float: left; margin: 0; text-align: center; margin-right: 10px;}
+
+#menu li a { height: 34px; line-height: 34px;  background-color: #ffffff; display: block; color: #348518; border: 1px solid #348518; border-radius: 5px 5px 0 0; font-family: Verdana; font-size: 16px; float: left; padding: 0 15px;}
+
+#menu li.active a, #menu a:hover  {background: url(images/menu_green.png) repeat-x 0 -10px; border: none; padding: 1px 16px 0; color: #ffffff; text-decoration: none;}
+#menu li.last {}
+
+#menu ul.vertical {/*border: 1px solid #348518;*/ border-bottom: none; border-radius: 0; }
+#menu ul.vertical li {margin: 0;}
+#menu ul.vertical li a {border: none;  border-radius: 0; padding: 0 15px; background: #ffffff; color: #348518; margin: 0;}
+#menu ul.vertical li a:hover {border: none;  border-radius: 0; padding: 0px 15px 0; background: url(images/menu_green.png) repeat-x 0 -10px; color: #ffffff;}
+
+#menu ul.vertical.first {margin-top: 1px;}
+

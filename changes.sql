@@ -11,3 +11,6 @@ CREATE TABLE `anahata`.`code_preps` (
 `created` INT( 10 ) NOT NULL ,
 `updated` INT( 10 ) NOT NULL
 ) ENGINE = MYISAM ;
+
+--22.05.2012
+ALTER TABLE `code_news_module_entry` ADD `order_id` INT( 3 ) NOT NULL DEFAULT '1'

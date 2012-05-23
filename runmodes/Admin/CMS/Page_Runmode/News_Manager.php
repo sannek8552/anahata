@@ -94,6 +94,7 @@ class News_Manager extends Runmode
 			$data['short'] = $_REQUEST['short'];
 			$data['full'] = $_REQUEST['full'];
 			$data['adddate'] = $_REQUEST['adddate'];
+                        $data['order_id'] = $_REQUEST['order_id'] ? $_REQUEST['order_id'] : 1;
 			//$data['addtime'] = $_REQUEST['Time_Hour'].':'.$_REQUEST['Time_Minute'];
 
                         $newimage = $this->file_save();

@@ -17,11 +17,11 @@ class News_Holder extends Data_Holder_Simple
 	}
 	function get_entries()
 	{
-		return $GLOBALS['core.sql']->getAll('SELECT * FROM #p#news_module_entry WHERE news_id=? ORDER BY adddate, addtime', array($this->get_key_value()));
+		return $GLOBALS['core.sql']->getAll('SELECT * FROM #p#news_module_entry WHERE news_id=? ORDER BY order_id, adddate DESC, addtime DESC', array($this->get_key_value()));
 	}
 	function get_entries_id()
 	{
-		return $GLOBALS['core.sql']->getAll('SELECT id FROM #p#news_module_entry WHERE news_id=? ORDER BY adddate, addtime', array($this->get_key_value()));
+		return $GLOBALS['core.sql']->getAll('SELECT id FROM #p#news_module_entry WHERE news_id=? ORDER BY order_id, adddate DESC, addtime DESC', array($this->get_key_value()));
 	}
 	function get_by_page($page, $news_id, $front = null)
 	{
@@ -35,7 +35,7 @@ class News_Holder extends Data_Holder_Simple
 		}
 		$GLOBALS['core.list']->set_filters($filters);
 		$GLOBALS['core.list']->set_param('items_per_page', $this->data['items']);//$GLOBALS['core.sql']->getOne('SELECT items FROM #p#news_module WHERE id=?', array($news_id)));
-		$GLOBALS['core.list']->set_param('order_by', array('adddate DESC, addtime DESC'));
+		$GLOBALS['core.list']->set_param('order_by', array('order_id, adddate DESC, addtime DESC'));
 		$news = $GLOBALS['core.list']->get_page($page);
 		$num_pages = $GLOBALS['core.list']->num_pages();
 		//pp($num_pages);
@@ -63,7 +63,7 @@ class News_Holder extends Data_Holder_Simple
 
 		$GLOBALS['core.list']->set_filters($filters);
 		$GLOBALS['core.list']->set_param('items_per_page', 3);
-		$GLOBALS['core.list']->set_param('order_by', array('adddate DESC, addtime DESC'));
+		$GLOBALS['core.list']->set_param('order_by', array('orderid, adddate DESC, addtime DESC'));
 		$news = $GLOBALS['core.list']->get_page(1);
 
                 switch ($news_id) {
