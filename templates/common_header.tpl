@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" class="nop">
 <head>
-<link rel="image_src" href="{#domain_name#}{#img_url#}logo.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>{if $seo_data.page_title}Анахата :: {$seo_data.page_title}{else}Школа ЙОГИ Анахата{/if}</title>
 {if $seo_data.page_description}<meta name="description" content="{$seo_data.page_description}" />{/if}
@@ -14,7 +13,7 @@
 <link href="{#css_url#}menu.css?1=2" rel="stylesheet" type="text/css" />
 <link  href="{#css_url#}slimbox.css" rel="stylesheet" type="text/css" media="screen" />
 <link  href="{#css_url#}jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css"/>
-<link rel="image_src" href="{#img_url#}logo.png" />
+<link rel="image_src" href="{#img_url#}logo_100.png" />
 <script type="text/javascript">
         var script_url = '{#script_url#}';
         var images_prefix = '{#img_url#}';
@@ -83,9 +82,9 @@
         </div>
         <div id="menu" class="menu">
             <ul>
-                <li {if $seo_data.page_title == $html_home_page.title}class="active"{/if}><a href="{#script_url#}{seo_url rm=$html_home_page.seo_url}">{$html_home_page.title}</a></li>
+                <li {if $seo_data.seo_url == $html_home_page.seo_url}class="active"{/if}><a href="{#script_url#}{seo_url rm=$html_home_page.seo_url}">{$html_home_page.title}</a></li>
                 {foreach from = $html_menus item = item}
-                    <li {if $seo_data.page_title == $item.title}class="active"{/if}><a href="{#script_url#}{seo_url rm=$item.seo_url}">{$item.title}</a>
+                    <li {if $seo_data.seo_url == $item.seo_url}class="active"{/if}><a href="{#script_url#}{seo_url rm=$item.seo_url}">{$item.title}</a>
                     {if $item.sub}
                         {include file="sub_menu.tpl" items=$item.sub level=2}
                     {/if}
@@ -97,7 +96,19 @@
 
         <div id="main" >
           <div id="content">
+                {if $seo_data.seo_url != $html_home_page.seo_url}
+                <div id="breadcrumbs">
+                    {foreach from = $breadcrumbs item = item}
+                        {if $seo_data.seo_url == $item.seo}
+                        <span>{$item.title}</span> 
+                        {else}
+                            <a href="{#script_url#}{seo_url rm=$item.seo}">{$item.title}</a> <span class="separ"></span>
+                        {/if}
 
+                    {/foreach}
+                </div>
+                {/if}
+                
                 {if $body}
                     {include file=$body}
 
@@ -111,14 +122,10 @@
         <div id="footer">
             <p>Школа ЙОГИ Анахата г. Томск</p>
             <br/>
-
-            <a href="http://region70.ru/" target="_blank" title="Сайты Томска"><img src="http://region70.ru/get88x31/" width="88" height="31" border="0"/></a>
+            <div class="informers">
+                {include file="informers.tpl"}
+            </div>
             
-            <a href="http://catalog.metka.ru/" title="[METKA.RU] - томский каталог"><img src="http://catalog.metka.ru/counter/counter.php?id=1337703105&im=7&tp=3" border=0 alt="CATALOG.METKA.RU" width=88 height=31/></a>
-            
-            <span style="margin:0;padding:0" id="tbec"><script type="text/javascript">setTimeout('var tbex=document.createElement("SCRIPT");tbex.type="text/javascript";tbex.src="http://c.tbex.ru/y/4!8831!yoga.tomsk.ru!c.js?rev=2"+String.fromCharCode(38)+"rnd="+(new Date().getTime());(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(tbex)',1)</script></span><noscript><a href="http://tbe.tom.ru/site/yoga.tomsk.ru/"><img src="http://c.tbex.ru/y/4!8831!yoga.tomsk.ru!c.gif" alt="TBE" /></a></noscript>
-
-            <a href="http://pogodavtomske.ru" title="POGODAVTOMSKE.RU - сайт о погоде в г. Томске"><img src="http://pogodavtomske.ru/informer/inf.php?tp=jpg&f=informer88_31_4.jpg" width="88" height="31" alt="POGODAVTOMSKE.RU - сайт о погоде в г. Томске" title="POGODAVTOMSKE.RU - сайт о погоде в г. Томске"/></a>
         </div>
         
     </div>

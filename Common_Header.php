@@ -23,7 +23,7 @@ class Common_Header
 		$brands = $bh->get_all();
 		$GLOBALS['core.smarty']->assign('brands',$brands);
 
-
+                
 
                 if (!empty($tpl)) {
                     $GLOBALS['core.smarty']->assign('body', $tpl . '.tpl');

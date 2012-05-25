@@ -226,3 +226,7 @@ input[type=text], input[type=password] {width: 300px;}
 .table td{padding: 5px; border: 1px solid #348318;}
 
 .table_head {font-weight: bold; background-color: #808080; color: #ffffff;}
+
+#breadcrumbs {padding-bottom: 10px;}
+
+#breadcrumbs .separ {background: url(images/breadcrumb-separator.gif) no-repeat top left; width: 13px; height: 9px; display: inline-block;}

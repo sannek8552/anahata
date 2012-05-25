@@ -10,7 +10,7 @@
         {/if}
         <div>{$article.full}</div>
         <div>
-            <a href="{#script_url#}{seo_url rm=$seo_url param1 = $hid_current}">Назад к списку</a>
+            <a href="{#script_url#}{seo_url rm=news}">Назад к списку новостей</a>
         </div>
         <div class="clear"></div>
         <div id="vk_comments"></div>
@@ -56,7 +56,7 @@
                 </div>
                 {if $item.full}
                 <div class="detail">
-                    <a href="{#script_url#}{seo_url rm=$seo_url param1 = $num_pages.current param2 = 'full_article' param3=$item.id}">Подробнее...</a>
+                    <a href="{#script_url#}{seo_url rm=news param1 = 'detail' param2=$item.id}">Подробнее...</a>
                 </div>
                 {/if}
                 

@@ -49,12 +49,16 @@ class Show_Page extends Runmode
 			//$GLOBALS['core.smarty']->assign('seo_url', $data['seo_url']);
 			$_REQUEST['page_link'] = $data['seo_url'];
 		}
-		
+                
+                $breadcrumbs = $GLOBALS['core.tree']->get_place($data['id'], 'title', 'id');
+		$GLOBALS['core.smarty']->assign('breadcrumbs', $breadcrumbs);
+
 		$GLOBALS['core.smarty']->assign('seo_url', $_REQUEST['page_link']);
 		$GLOBALS['core.CMS.seo_url'] = $_REQUEST['page_link'];
 
 		$GLOBALS['core.smarty']->assign('body_as_text', $data['content']);
                 //$GLOBALS['core.smarty']->assign('header_image', Header_Image_Holder::getImageById($data['header_image']));
+                //pp($data);
 		$GLOBALS['core.smarty']->assign('seo_data', $data);
 		$GLOBALS['core.smarty']->assign('text_to_init', $GLOBALS['text_to_init']);
                 //pp($data);

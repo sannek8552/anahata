@@ -5,9 +5,13 @@ class Page_News_Runmode extends Runmode
 {
 	function Page_News_Runmode()
 	{
-		$this->base_map[0] = 'page_id';
-		$this->base_map[1] = 'full';
-		$this->base_map[2] = 'id';
+            if ($_REQUEST['params_to_pars'][0] == 'detail') {
+                $this->base_map[0] = 'detail';
+		$this->base_map[1] = 'id';
+            } else {
+                $this->base_map[0] = 'page_id';
+            }
+		
 		
 		parent::Runmode();
 	}
@@ -23,7 +27,7 @@ class Page_News_Runmode extends Runmode
                     $GLOBALS['core.smarty']->assign('news_name', $news_holder->get_data('name'));
                     return $GLOBALS['core.smarty']->fetch('Common/CMS/Page_Runmode/news_module_short_list.tpl');
                 }
-		elseif(isset($_REQUEST['full']) && $_REQUEST['full'] == 'full_article')
+		elseif(isset($_REQUEST['detail']) && $_REQUEST['detail'] == 'detail')
 		{
 			if(isset($_REQUEST['id']) && is_numeric($_REQUEST['id']))
 			{

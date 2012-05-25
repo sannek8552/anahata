@@ -16,14 +16,15 @@ class Tree extends Module
 	var $function_call = array();
 	var $additional = '';
 	var $tree = array();
+        var $fields = array('id','created','updated','parent_id','title','order_id','deleted','page_title','keywords','page_description','seo_url','published','active','google_priority');
 	
 	function set_callback($callback, $additional)
 	{
 		$this->function_call = $callback;
 		$this->additional = $additional;
 	}
-	
-	function get_tree($root_id = 0, $to_select = array(),$table_name, $id_key,$parent_id_key, $order_by = '',$filters = array())
+
+	function get_tree($root_id = 0, $to_select = array(), $table_name = 'menu', $id_key = 'id', $parent_id_key = 'parent_id', $order_by = 'order_id', $filters = array())
     {
         $SQL =& $GLOBALS['core.sql'];       
         $p = $GLOBALS['core.store']->prefix;
@@ -155,26 +156,28 @@ class Tree extends Module
     function get_place($current_id, $name_path, $id_key)
     {
     	$path = array();
-    	$cur_tree = $this->tree;
+    	$cur_tree = $this->get_tree(1, $this->fields);
     	$found = 0;
     	$i = 0;
-    	while($found !=0 && $i < 1000)
+    	while($found !=1 && $i < 1000)
     	{
+            //pp($cur_tree);
     		$i++;
     		foreach($cur_tree as $key => $value)
     		{
+                    
     			if($current_id == $key)
     			{
     				$found = 1;
-    				$path[] = array($name_path => $value[$name_path], $id_key => $key);
+    				$path[] = array($name_path => $value[$name_path], $id_key => $key, 'seo'=>$value['seo_url']);
     				break;
     			}
-    			if(!is_array($value['sub_ids']))
+    			if(!isset($value['sub_ids']) || !is_array($value['sub_ids']))
     				continue;
     			if(in_array($current_id, $value['sub_ids']))
     			{
     				$cur_tree = $value['sub'];
-    				$path[] = array($name_path => $value[$name_path], $id_key => $key);
+    				$path[] = array($name_path => $value[$name_path], $id_key => $key, 'seo'=>$value['seo_url']);
     				break;
     			}
     		}
