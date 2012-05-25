@@ -72,8 +72,7 @@ a:hover { text-decoration:underline;}
         color: #348318;
 }
 #footer a, #footerNew a {
-	color:#FFFFFF;
-	text-decoration:none;
+
 }
 #footer a:hover, #footerNew a:hover {
 	color:#333333;

@@ -120,7 +120,7 @@
           
         </div>
         <div id="footer">
-            <p>Школа ЙОГИ Анахата г. Томск</p>
+            <p>Позвонить: (3822) 22-45-29 / Написать: <a href="mailto:anahata-tomsk@mail.ru">anahata-tomsk@mail.ru</a></p>
             <br/>
             <div class="informers">
                 {include file="informers.tpl"}
