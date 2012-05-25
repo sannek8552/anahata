@@ -39,7 +39,7 @@
     	<!--<a href="javascript:void(0);" onclick="page_creator.populate_seo(false);">Auto Fill from Meta Title</a>-->    </td>
   </tr>
   
-  <tr style="display: none;">
+  <tr>
     <td><strong>Google Priority:</strong></td>
     <td><select name="name_google_priority" id="google_priority">
       <option value="0.1">0.1</option>
@@ -53,9 +53,10 @@
       <option value="0.9" {if $menu_row.google_priority=="0.9"}selected{/if}>0.9</option>
       <option value="1" {if $menu_row.google_priority=="1"}selected{/if}>1</option>
     </select> <br />
-      <em>To be updated with caution</em></td>
-    <td valign="top"><strong>Header Image</strong></td>
-    <td valign="top">
+      <em>Не менять!</em>
+    </td>
+    <td valign="top" style="display:none;"><strong>Header Image</strong></td>
+    <td valign="top"  style="display:none;">
         <select name="name_header_image" id="header_image">
             <option value="">Default</option>
             {foreach from=$header_images key=key item=item}
