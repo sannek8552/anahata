@@ -10,7 +10,7 @@ class Google_Sitemap
 		header('Content-Type:text/xml');
 		print '<?xml version="1.0" encoding="UTF-8"?>';
   		print '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-                               xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1">';
+                               xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">';
 		//here we need to get all active item in menu
 		$menus = $GLOBALS['core.sql']->getAll('SELECT * FROM #p#menu WHERE active=1');
 		
