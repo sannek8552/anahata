@@ -21,23 +21,20 @@
     <td><input name="name_keywords" type="text" id="keywords" value="{$menu_row.keywords}" size="80" /></td>
     <td><strong>Описание:</strong></td>
     <td rowspan="3">
-    	<textarea name="name_page_description" cols="60" rows="4" id="page_description" onkeyup="page_creator.check_word_count(this,160,{literal}$('meta_description_info'){/literal})">{$menu_row.page_description}</textarea>
+    	<textarea name="name_page_description" cols="60" rows="4" id="page_description" onkeyup="page_creator.check_word_count(this,160,{literal}$('meta_description_info'){/literal})" style="height: 82px;">{$menu_row.page_description}</textarea>
     	<div id="meta_description_info" ></div>
     </td>
 
   </tr>
   <tr>
-      <td rowspan="2" ><strong>URL адрес:</strong></td>
+      <td><strong>URL адрес:</strong></td>
     <td style="padding-bottom:0px;" valign="bottom">
     	<input name="name_seo_url" type="text" id="seo_url" value="{$menu_row.seo_url}" size="80" title="string___Please, enter page seo_url"/><br />
         <div id="bad_seo"></div>
-    	 </td>
+    </td>
+    <td></td>
   </tr>
-  <tr>
 
-      <td style="padding-top:0px;" valign="top">
-    	<!--<a href="javascript:void(0);" onclick="page_creator.populate_seo(false);">Auto Fill from Meta Title</a>-->    </td>
-  </tr>
   
   <tr>
     <td><strong>Google Priority:</strong></td>
@@ -56,14 +53,14 @@
       <em>Не менять!</em>
     </td>
     <td valign="top" style="display:none;"><strong>Header Image</strong></td>
-    <td valign="top"  style="display:none;">
-        <select name="name_header_image" id="header_image">
+
+    </tr>
+  <tr style="display:none;"><td><select name="name_header_image" id="header_image">
             <option value="">Default</option>
             {foreach from=$header_images key=key item=item}
             <option value="{$key}">{$item}</option>
             {/foreach}
-        </select>
-    </td>
+        </select></td>
   </tr>
   <tr style="display: none;">
     <td><strong>Template:</strong></td>
