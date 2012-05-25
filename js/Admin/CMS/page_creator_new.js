@@ -243,8 +243,8 @@ Page_Creator = function()
                                 var errors = req.responseJS.errors;
                                 if(errors.seo_url == 1)
                                 {
-                                    document.getElementById('bad_seo').innerHTML = '<font color=\"red\">Unavailable Seo url </font>';
-                                    alert('Error: Unavailable Seo url');
+                                    document.getElementById('bad_seo').innerHTML = '<font color=\"red\">Недопустимый URL </font>';
+                                    alert('Ошибка: Недопустимый URL');
                                 }
                             }
                             else
@@ -344,8 +344,8 @@ Page_Creator = function()
 
 		}
                 
-		this['preview_panel'].setHeader('Preview <a class="container-close" href="#" onclick="page_creator.preview(true)">Close</a>');
-		this['preview_panel'].setBody('Loading...');
+		this['preview_panel'].setHeader('Предварительный просмотр <a class="container-close" href="#" onclick="page_creator.preview(true)">Закрыть</a>');
+		this['preview_panel'].setBody('Загрузка...');
 		this['preview_panel'].setFooter('');
 		this['preview_panel'].render(document.body);
 
@@ -904,7 +904,7 @@ Page_Creator = function()
     	var left = max - value.length;
     	var current = value.length;
     	if (value != elem.value)	elem.value = value;
-    	text.innerHTML = current + ' character(s) entered — ' + left + ' left';
+    	text.innerHTML = current + ' символов введено — ' + left + ' осталось';
     }
     
     t.load_word_count = function()

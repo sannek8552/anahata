@@ -6,7 +6,7 @@
   <tr>
     <td valign="top"><strong>Название:</strong></td>
     <td  valign="top">
-        <input name="name_title" type="text" id="title" value="{$menu_row.title}" size="50" title="string___Please, enter page title" /><br/>
+        <input name="name_title" type="text" id="title" value="{$menu_row.title}" size="50" title="string___Введите название" /><br/>
         
     </td>
     <td><strong>Заголовок:</strong></td>
@@ -29,7 +29,7 @@
   <tr>
       <td><strong>URL адрес:</strong></td>
     <td style="padding-bottom:0px;" valign="bottom">
-    	<input name="name_seo_url" type="text" id="seo_url" value="{$menu_row.seo_url}" size="80" title="string___Please, enter page seo_url"/><br />
+    	<input name="name_seo_url" type="text" id="seo_url" value="{$menu_row.seo_url}" size="80" title="string___Введите Url"/><br />
         <div id="bad_seo"></div>
     </td>
     <td></td>
@@ -37,7 +37,7 @@
 
   
   <tr>
-    <td><strong>Google Priority:</strong></td>
+    <td><strong>Google приоритет:</strong></td>
     <td><select name="name_google_priority" id="google_priority">
       <option value="0.1">0.1</option>
       <option value="0.2" {if $menu_row.google_priority=="0.2"}selected{/if}>0.2</option>
