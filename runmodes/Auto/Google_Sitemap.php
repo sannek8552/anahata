@@ -1,7 +1,7 @@
 <?php
 //require_once('modules/Common_Menu.php');
 require_once('classes/ProductHolder.php');
-require_once('classes/CategoryHolder.php');
+//require_once('classes/CategoryHolder.php');
 
 class Google_Sitemap
 {
@@ -9,7 +9,8 @@ class Google_Sitemap
 	{
 		header('Content-Type:text/xml');
 		print '<?xml version="1.0" encoding="UTF-8"?>';
-  		print '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+  		print '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+                               xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1">';
 		//here we need to get all active item in menu
 		$menus = $GLOBALS['core.sql']->getAll('SELECT * FROM #p#menu WHERE active=1');
 		
@@ -59,13 +60,19 @@ class Google_Sitemap
 			//for now assume all menus are static
 			print '<url>';
 			print '<loc>' . $t_conf['common']['domain_name'] . $t_conf['common']['script_url'] . $value['seo_url'] . '.html' . '</loc>';
+                        if ($value['seo_url'] == 'index') {
+                        print '<image:image>
+                                   <image:loc>'.$t_conf['common']['domain_name'] . $t_conf['common']['img_url'].'logo.png</image:loc>
+                                   <image:title>Логотип Анахата</image:title>
+                               </image:image>';
+                        }
 			print '<lastmod>' . date("Y-m-d",$value['updated']) . '</lastmod>';
 			print '<priority>' . $value['google_priority'] . '</priority>';
 			print '<changefreq>' . $freq . '</changefreq>';
 			print '</url>';			
 		}
 		
-		$ph = new ProductHolder();
+		/*$ph = new ProductHolder();
 		$products = $ph->getAllActive();
 		foreach ($products as $key => $value)
 		{
@@ -122,7 +129,7 @@ class Google_Sitemap
 			print '<priority>0.1</priority>';
 			print '<changefreq>' . $freq . '</changefreq>';
 			print '</url>';
-		}
+		}*/
 		
 		print '</urlset>';
 		return '';
