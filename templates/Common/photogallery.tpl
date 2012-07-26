@@ -5,7 +5,7 @@
     <div id="photogallery">
         {foreach from=$galleries item=item}
             <div class="item">
-                <a href="{#script_url#}{seo_url rm='Photogallery' param1=$item.id}" alt="">{$item.name}</a>
+                <a href="{#script_url#}{seo_url rm='photogallery' param1=$item.id}" alt="">{$item.name}</a>
             </div>
         {/foreach}
         <div class="clear"></div>
