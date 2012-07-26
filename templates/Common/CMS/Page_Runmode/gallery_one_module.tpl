@@ -23,7 +23,7 @@
    {/foreach}
 </div>
 <div class="clear"></div>
-<a href="{#script_url#}{seo_url rm='Photogallery'}">Назад</a>
+<a href="{#script_url#}{seo_url rm='photogallery'}">Назад</a>
 <div id="pagination">
     {if count($num.prepared) > 1}
         <b>Страницы:</b>
@@ -31,7 +31,7 @@
             {if $num.current == $item}
                 <b>{$item}</b>
             {else}
-                <a href="{#script_url#}{seo_url rm='Photogallery' param1=$item}" >{$item}</a>
+                <a href="{#script_url#}{seo_url rm='photogallery' param1=$item}" >{$item}</a>
             {/if}
         {/foreach}
     {/if}
