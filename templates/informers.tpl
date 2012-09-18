@@ -31,5 +31,5 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 "border='0' width='88' height='31'><\/a>")
 //--></script><!--/LiveInternet-->
 
-<a href="http://pogodavtomske.ru" title="POGODAVTOMSKE.RU - сайт о погоде в г. Томске"><img src="http://pogodavtomske.ru/informer/inf.php?tp=jpg&f=informer88_31_4.jpg" width="88" height="31" alt="POGODAVTOMSKE.RU - сайт о погоде в г. Томске" title="POGODAVTOMSKE.RU - сайт о погоде в г. Томске"/></a>
-
+<!-- POGODAVTOMSKE.RU-->
+<script type="text/javascript">geks=document.getElementsByTagName("script");geks=geks[geks.length-1];function inf(){var s=document.createElement("SCRIPT");s.type="text/javascript";s.src="http://pogodavtomske.ru/informer/getKod.php?c=geks&tp=88_31_js&l=29430&t=1347981437895";document.documentElement.firstChild.appendChild(s);};setTimeout("inf()",1);</script>
