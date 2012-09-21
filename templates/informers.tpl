@@ -16,7 +16,7 @@ try{document.write('<a href="http://top.mail.ru/jump?from=2209836">'+
 <noscript><p><a href="http://top.mail.ru/jump?from=2209836">
 <img src="http://d8.cb.b1.a2.top.mail.ru/counter?js=na;id=2209836;t=214"
 style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a></p></noscript>
-{/literal}
+
 <!-- //Rating@Mail.ru counter -->
 
 <!--LiveInternet counter--><script type="text/javascript"><!--
@@ -30,6 +30,18 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 " посетителей за 24 часа' "+
 "border='0' width='88' height='31'><\/a>")
 //--></script><!--/LiveInternet-->
-
+<div style="display: inline-block;">
 <!-- POGODAVTOMSKE.RU-->
-<script type="text/javascript">geks=document.getElementsByTagName("script");geks=geks[geks.length-1];function inf(){var s=document.createElement("SCRIPT");s.type="text/javascript";s.src="http://pogodavtomske.ru/informer/getKod.php?c=geks&tp=88_31_js&l=29430&t=1347981437895";document.documentElement.firstChild.appendChild(s);};setTimeout("inf()",1);</script>
+<script type="text/javascript">
+    geks=document.getElementsByTagName("script");
+    geks=geks[geks.length-1];
+    function inf(){
+        var s=document.createElement("SCRIPT");
+        s.type="text/javascript";
+        s.src="http://pogodavtomske.ru/informer/getKod.php?c=geks&tp=88_31_js&l=29430&t=1347981437895";
+        document.documentElement.firstChild.appendChild(s);
+    };
+    setTimeout("inf()",1);
+</script>
+</div>
+{/literal}
