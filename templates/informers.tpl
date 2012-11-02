@@ -18,8 +18,10 @@ try{document.write('<a href="http://top.mail.ru/jump?from=2209836">'+
 style="border:0;" height="31" width="88" alt="Рейтинг@Mail.ru" /></a></p></noscript>
 
 <!-- //Rating@Mail.ru counter -->
-
-<!--LiveInternet counter--><script type="text/javascript"><!--
+{/literal}
+{*
+<!--LiveInternet counter-->
+<script type="text/javascript"><!--
 document.write("<a href='http://www.liveinternet.ru/click' "+
 "target=_blank><img src='//counter.yadro.ru/hit?t54.15;r"+
 escape(document.referrer)+((typeof(screen)=="undefined")?"":
@@ -29,7 +31,10 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
 "' alt='' title='LiveInternet: показано число просмотров и"+
 " посетителей за 24 часа' "+
 "border='0' width='88' height='31'><\/a>")
-//--></script><!--/LiveInternet-->
+//--></script>
+<!--/LiveInternet-->
+*}
+{literal}
 <div style="display: inline-block;">
 <!-- POGODAVTOMSKE.RU-->
 <script type="text/javascript">
@@ -44,4 +49,6 @@ screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
     setTimeout("inf()",1);
 </script>
 </div>
+
+<a href="http://samopoznanie.ru/" target="_blank"><img src="http://samopoznanie.ru/design/images/samopoznanie2.gif" width="90" height="30" alt="Всё о развитии человека и самопознании" title="Самопознание.ру — тренинги Томска"></a>
 {/literal}
